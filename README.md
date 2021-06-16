@@ -1,0 +1,1 @@
+The Military Ranks Ontology is an ontology of military ranks within the chain of command, and the authority roles and/or responsibilities associated with those ranks. It is an extension of the Common Core Ontologies and the Joint Doctrine Ontology.
