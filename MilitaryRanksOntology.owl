@@ -27,15 +27,6 @@ Occupational field is reflected in a sailor&apos;s sleeve rate insignia. All sai
 Thus, Navy Fireman, Airman, Constructionman Recruits all share the same rank/rate, Seaman Recruit Rank, but they are further differentiated by their occupational field.
 
 There are also &apos;ratings&apos;, which is different than &apos;rate&apos;. Sailors in the E-1 through E-3 ranks are considered as being in training to attain a &apos;rating&apos;. I still need to work on this part. Once one has a rating, this will be reflected in ones official title.</obo:IAO_0000232>
-        <obo:IAO_0000232>Needs vetting:
-
-the &apos;is one rank higher than&apos; axioms for marine corps and army &apos;Master Sergeant&apos; and &apos;First Sergeant&apos; ranks. 
-
-They both are at DoD paygrade E8, and both have the OR8 NATO Code, but First Sergeant is higher in rank than Master Sergeant. 
-
-The hard part: how do these ranks correlate with ranks in services that only have one rank in the E8 paygrade and OR8 NATO Code?
-
-For instance, Senior Chief Petty Officer is the lone E8/OR8 rank in the navy and coast guard. Is this equivalent in rank scale to Master Sergeant, but lower in rank than First Sergeant?</obo:IAO_0000232>
         <obo:IAO_0000232>The above is my non-expert understanding. But I am not completely certain my understanding is correct. 
 
 This is because I am not sure that &apos;fireman&apos;, &apos;constructionman&apos;, &apos;hospitalman&apos;, &apos;airman&apos; and &apos;seaman&apos; are not used as rank terms. 
@@ -2221,6 +2212,53 @@ Technically, axioms involving &apos;is military rank directly above&apos; could 
         <rdfs:subPropertyOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_lower_military_rank_than"/>
         <rdfs:domain rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Military_Rank"/>
         <rdfs:range rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Military_Rank"/>
+        <rdfs:comment>Where x is a Military Rank within military service branch t, y is a Military Rank within another military service branch u, z is some Military Rank within u which is equivalent in rank to x, and w is some Military Rank within t which is equivalent in rank to y: 
+
+x is one rank below y iff:
+
+i) z is one rank below y.
+and:
+ii) x is one rank below w.
+
+Take for instance, the rank of Specialist (x) within the U.S. Army (t) and its equivalent rank of Senior Airman (z) within the Air Force (u). Senior Airman (z) is one rank below the rank of Staff Sergeant (y) within the Air Force. But the rank of U.S. Army Specialist (x) is not one rank below the Air Force Staff Sergeant Rank (y) because U.S. Army Specialist is not one rank below U.S. Army Sergeant (w) which is the equivalent of Air Force Staff Sergeant.
+
+---------------
+
+Or: 
+
+Where x is a Military Rank within military service branch t, y is a Military Rank within another military service branch u, z is some Military Rank within u which is equivalent in rank to x, and w is some Military Rank within t which is equivalent in rank to y: 
+
+x is one rank below y iff: 
+
+i) x is one rank below w
+and:
+ii) there is no intermediary rank between z and y within u.
+
+Let y be the rank of Army Sergeant within the Army (u), which is equivalent in rank to the Staff Sergeant rank (w) within the Air Force (t). The Air Force Senior Airman rank (x) is equivalent in rank to the Army Specialist rank (z), and the Senior Airman rank (x) is one rank below the Staff Sergeant Rank (w). But Senior Airman (x) is not one rank below Army Sergeant (y) because within the Army (u) there is an intermediary rank, Army Corporal, between Army Specialist (z) and Army Sergeant (y). Thus, Senior Airman is two ranks below Army Sergeant as it is equivalent to a rank two ranks below Army Sergeant.
+
+By contrast, consider the rank of Navy Seaman (x), and let y be the rank of Marine Corps Corporal within the Marine Corps (u), which is equivalent to the rank of Petty Officer Third Class (w) within the the Navy (t). The Navy Seaman Rank (x) is equivalent in rank to the Marine Corps Lance Corporal Rank (z), and the Navy Seaman Rank is one rank below Petty Officer Third Class (w). Furthermore, there is no intermediary rank between M.C. Lance Corporal (z) and M.C. Corporal (y) within the Marine Corps (u). And so Navy Seaman is one rank below M.C. Corporal because its Marine Corps equivalent is one rank below M.C. Corporal.
+
+The above principle has the complementary principle:
+
+Let y be the rank of Army Corporal within the Army (u), which is equivalent in rank to the Marine Corps Corporal rank (w) within the Marine Corps (t). The rank of Marine Corps Lance Corporal (x) is equivalent in rank to the Private First Class Rank (z) within the Army, and Marine Corps Lance Corporal (x) is one rank below the rank of Marine Corps Corporal (w). But Marine Corps Lance Corporal is not one rank below the Army Corporal rank (y). And this is because there is an intermediary rank, namely Army Specialist, between Army Private First Class (z) and Army Corporal (y). Thus, Marine Corps Lance Corporal is two ranks below Army Corporal (it being one rank below Army Specialist, which is one rank below Army Corporal). 
+
+This principle is also applicable to the ranks of Navy and Coast Guard Seaman, which are also equivalent to Army Private First Class. These ranks are both one rank below the Navy and Coast Guard Petty Officer Third Class Ranks, the latter of which are both equivalents of the Army Corporal Rank. But the Navy and Coast Guard Seaman Ranks are two ranks below Army Corporal rank for the same reasons as above.
+
+-------------
+
+Where x is a Military Rank within military service branch t, 
+  y is a Military Rank within another military service branch u,
+   z is some Military Rank within u which is equivalent in rank to x, 
+    w is some Military Rank within t which is equivalent in rank to y,                     z is one rank below y,
+        and there is no Military Rank within t which is equivalent in rank to y:
+
+x is one rank below y iff: 
+
+There is no rank v within t, such that v is a higher rank than x and v is a lower rank lower than y.
+
+Thus consider the Air Force Airman First Class Rank (x) within the Air Force (t), and the rank of Marine Corps Corporal (y) in the Marine Corps (u). There is no military rank within the Air Force that is equivalent in rank to the Marine Corps Corporal Rank. The Lance Corporal Rank (z) is the military rank within the Marine Corps (u) which is equivalent in rank to the Airman First Class rank (x), and the Lance Corporal Rank (z) is one rank below the Marine Corps Corporal Rank (y). But the Airman First Class rank is not one rank lower than the Marine Corps Corporal rank because there is a rank v, namely the Air Force Senior Airman Rank that is one rank higher than Airman First Class and one rank lower than Marine Corps Corporal. And for that reason, although its Marine Corps equivalent, the Lance Corporal rank, is one rank lower than the Marine Corps Corporal rank, the Airman First Class is TWO ranks lower than Marine Corps Corporal rank.
+
+Consider by contrast the rank of Senior Airman (x) within the Air Force (t) and its relation to the rank of Army Corporol (y) within the Army (u). There is no military rank within the Air Force which is equivalent in rank to the Army Corporal rank. Within the Army (u) the rank of Army Specialist (z)  is equivalent in rank to the Senior Airman Rank (x), and Army Specialist (z) is one rank below the rank of Army Corporal (y). But there is no rank v within the Air Force that is higher than Senior Airman and lower than Army Corporal. And so Senior Airman is one rank below that of Army Corporal.</rdfs:comment>
         <rdfs:label>is one rank lower than</rdfs:label>
     </owl:ObjectProperty>
     
@@ -16424,24 +16462,6 @@ Perhaps I need to fix the rank hierarchy for:</obo:IAO_0000116>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Petty_Officer_Third_Class_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Corporal_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Petty_Officer_Third_Class_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Specialist_4_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -18511,7 +18531,7 @@ In that case, it will be one rank above U.S. Navy/Coast Guard Senior Chief Petty
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Specialist_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Private_First_Class_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -18541,25 +18561,25 @@ In that case, it will be one rank above U.S. Navy/Coast Guard Senior Chief Petty
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Corporal_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Petty_Officer_Second_Class_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Petty_Officer_Third_Class_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Corporal_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Petty_Officer_Second_Class_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Petty_Officer_Third_Class_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -18568,6 +18588,9 @@ In that case, it will be one rank above U.S. Navy/Coast Guard Senior Chief Petty
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>The Senior Airman Rank is equivalent to the rank of Army Specialist, which is also in the E-4 DoD paygrade. The Marine Corps, Navy and Coast Guard do not have an equivalent non-officer enlisted personnel rank equivalent in the E-4 paygrade.   
+
+The Army rank of Specialist is below the NCO rank of Corporal, which is also in the E-4 paygrade. The Air Force used to have an equivalent NCO rank of &apos;Sergeant&apos; in the E-4 paygrade (which, if were still in use, would itself be equivalent to the lowest ranking NCOs in the Marine Corps, Navy and Coast Guard, i.e., Corporal/Petty Officer Third Class).</rdfs:comment>
         <rdfs:label>U.S. Air Force Senior Airman Rank</rdfs:label>
     </owl:Class>
     
@@ -18637,7 +18660,7 @@ In that case, it will be one rank above U.S. Navy/Coast Guard Senior Chief Petty
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Sergeant_First_Class_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -18649,7 +18672,7 @@ In that case, it will be one rank above U.S. Navy/Coast Guard Senior Chief Petty
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Gunnery_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -18667,7 +18690,7 @@ In that case, it will be one rank above U.S. Navy/Coast Guard Senior Chief Petty
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_First_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Sergeant_Major_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -18679,7 +18702,7 @@ In that case, it will be one rank above U.S. Navy/Coast Guard Senior Chief Petty
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_First_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Master_Gunnery_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -18694,6 +18717,9 @@ In that case, it will be one rank above U.S. Navy/Coast Guard Senior Chief Petty
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Chief_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>Is two ranks above U.S. Army Sergeant First Class Rank. See the rdfs:comment for that class.
+
+Is two ranks above U.S. Army Gunnery Sergeant Rank. See the rdfs:comment for that class.</rdfs:comment>
         <rdfs:label>U.S. Air Force Senior Master Sergeant Rank</rdfs:label>
     </owl:Class>
     
@@ -20050,6 +20076,18 @@ But in other militaries, warranter officers are enlisted ranks. Thus I will crea
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Airman"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Specialist_4_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Staff_Sergeant_rank"/>
             </owl:Restriction>
@@ -20304,31 +20342,7 @@ Would it make sense to say that Army Corporal is two ranks above Private First C
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Master_Sergeant_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Senior_Chief_Petty_Officer_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Master_Sergeant_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Senior_Chief_Petty_Officer_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Senior_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -21202,7 +21216,31 @@ Would it make sense to say that Army Corporal is two ranks above Private First C
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Master_Sergeant_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Senior_Chief_Petty_Officer_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_First_Sergeant_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Senior_Chief_Petty_Officer_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Senior_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Two ranks below: U.S. Navy/Coast Guard Master Chief Petty Officer Rank, U.S. Air Force/Space Force Chief Master Sergeant Rank ???</rdfs:comment>
@@ -21350,24 +21388,6 @@ Would it make sense to say that Army Corporal is two ranks above Private First C
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Airman_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Petty_Officer_Third_Class_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Corporal_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Petty_Officer_Third_Class_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -21849,34 +21869,17 @@ Would it make sense to say that Army Corporal is two ranks above Private First C
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Master_Sergeant_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Senior_Chief_Petty_Officer_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Senior_Chief_Petty_Officer_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Senior_Master_Sergeant_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>From after WW1, up until 1948, this rank was named &apos;technical sergeant&apos;.</rdfs:comment>
+        <rdfs:comment>Is two ranks below:
+
+U.S. Air Force Senior Master Sergeant, U.S. Space Force Senior Master Sergeant, U.S. Coast Guard Senior Chief Petty Officer and U.S. Navy Chief Petty Officer. Call this Group A.
+
+The ranks in Group A are each directly above the rank in their respective services that is equivalent in rank to U.S. Army Sergeant First class. 
+
+But U.S. Army Sergeant First Class is also one rank directly below the U.S. Army Master Sergeant Rank, which has no equivalent rank in the U.S. Air Force, Space Force, Navy and Coast Guard. In this case, U.S. Army Sergeant First Class is two ranks below U.S. Army First Sergeant, which is the U.S. Army rank that is equivalent in rank to the ranks in Group A. It is for this reason that we say that U.S. Army Sergeant First Class is two ranks below those ranks.</rdfs:comment>
         <rdfs:label>U.S. Army Sergeant First Class Rank</rdfs:label>
     </owl:Class>
     
@@ -21979,7 +21982,31 @@ Would it make sense to say that Army Corporal is two ranks above Private First C
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Master_Sergeant_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Senior_Chief_Petty_Officer_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_First_Sergeant_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Senior_Chief_Petty_Officer_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Senior_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -22217,12 +22244,6 @@ Two ranks higher than: U.S. Air Force/Space Force Senior Master Sergeant Rank an
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Airman_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Petty_Officer_Third_Class_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -22238,12 +22259,7 @@ Two ranks higher than: U.S. Air Force/Space Force Senior Master Sergeant Rank an
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Petty_Officer_Third_Class_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Specialist_4_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:comment>Notice that being equivalent in rank to Senior Airman Rank does not imply that an Army Specialist is one rank below the next highest Air Force rank that is directly above Senior Airman, namely Staff Sergeant. Falling directly under Army Corporal, the Army Specialist is two ranks below the Army Sergeant Rank, which is the equivalent of the Air Force Staff Sergeant Rank. So it is two ranks below Air Force Staff Sergeant.</rdfs:comment>
         <rdfs:label>U.S. Army Specialist Rank</rdfs:label>
     </owl:Class>
     
@@ -24295,7 +24311,6 @@ If not, then directly above Chief Warrant Officer 4</obo:IAO_0000116>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Command_Chief_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Puzzle: rank difference relation with Master/First Sergeant in army/marines.</rdfs:comment>
         <rdfs:label>U.S. Coast Guard Master Chief Petty Officer Rank</rdfs:label>
     </owl:Class>
     
@@ -24491,12 +24506,6 @@ If not, then directly above Chief Warrant Officer 4</obo:IAO_0000116>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Airman_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Corporal_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -24510,12 +24519,6 @@ If not, then directly above Chief Warrant Officer 4</obo:IAO_0000116>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Petty_Officer_Third_Class_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Specialist_4_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -24617,7 +24620,7 @@ If not, then directly above Chief Warrant Officer 4</obo:IAO_0000116>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Airman_First_Class_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Airman_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -24641,7 +24644,7 @@ If not, then directly above Chief Warrant Officer 4</obo:IAO_0000116>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Specialist_3_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Specialist_4_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -25388,13 +25391,13 @@ Petty Officer Third Class Rank is the equivalent of the U.S. Army Corporal Rank,
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Sergeant_First_Class_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Gunnery_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -25424,7 +25427,7 @@ Petty Officer Third Class Rank is the equivalent of the U.S. Army Corporal Rank,
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Master_Gunnery_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -25439,6 +25442,9 @@ Petty Officer Third Class Rank is the equivalent of the U.S. Army Corporal Rank,
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Chief_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>Is two ranks above U.S. Army Sergeant First Class Rank. See the rdfs:comment for that class.
+
+Is two ranks above U.S. Army Gunnery Sergeant Rank. See the rdfs:comment for that class.</rdfs:comment>
         <rdfs:label>U.S. Coast Guard Senior Chief Petty Officer Rank</rdfs:label>
     </owl:Class>
     
@@ -26521,7 +26527,7 @@ But for the purposes of the ontology, we use &apos;Commissioned Officer&apos; in
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Airman_First_Class_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Airman_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -26545,7 +26551,7 @@ But for the purposes of the ontology, we use &apos;Commissioned Officer&apos; in
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Specialist_3_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Specialist_4_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -26578,13 +26584,21 @@ But for the purposes of the ontology, we use &apos;Commissioned Officer&apos; in
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>This gets tricky. From what I have read, technically the U.S. Army and Marine Corps Corporal Ranks, which are both NCO ranks, are equivalent in rank to U.S. Air Force Senior Airman Rank, U.S. Navy/Coast Guard Petty Officer Third Class Ranks, and U.S. Space Force Specialist 4 Rank.
+        <rdfs:comment>This comment was from 7/27/21: This gets tricky. From what I have read, technically the U.S. Army and Marine Corps Corporal Ranks, which are both NCO ranks, are equivalent in rank to U.S. Air Force Senior Airman Rank, U.S. Navy/Coast Guard Petty Officer Third Class Ranks, and U.S. Space Force Specialist 4 Rank.
 
 Notice though that of their equivalents, only the Navy and Coast Guard ranks are NCOs. 
 
 Thus, it is my understanding that since the corporals are NCO&apos;s, and the Senior Airmen and Specialist 4&apos;s are not NCO&apos;s, the corporals would outrank the latter in any joint operation between services. Thus one can outrank an officer of equivalent rank in some cases. And so we have to be careful in how we define the relationship of &apos;outranking&apos;. 
 
-At least, this is my non-expert analysis of the situation (based on the fact that NCO&apos;s outrank non-NCO&apos;s). Will need to consult further with an expert on this matter.</rdfs:comment>
+At least, this is my non-expert analysis of the situation (based on the fact that NCO&apos;s outrank non-NCO&apos;s). Will need to consult further with an expert on this matter.
+
+Update as 7/29/21:
+
+I am fairly sure that the articles where I read that the Senior Airman Rank is equivalent in RANK to the E-4 paygrade Navy and Coast Guard NCO ranks were simply conflating paygrade equivalency with rank equivalency.
+
+The following official document from the U.S. Army has a table that clearly shows the Army and Marine Corps Corporal ranks and the Navy and Coast Guard to all be equivalents, while Army Specialist and Senior Airman are shown to be equivalents a rank below, with no corresponding non-officer equivalents in the Navy, Coast Guard and Marines Corps.
+
+https://www.armyresilience.army.mil/ard/images/pdf/Policy/600-20%20Army%20Command%20Policy.pdf</rdfs:comment>
         <rdfs:label>U.S. Marine Corps Corporal Rank</rdfs:label>
     </owl:Class>
     
@@ -26800,31 +26814,7 @@ At least, this is my non-expert analysis of the situation (based on the fact tha
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Master_Sergeant_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Master_Sergeant_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Senior_Chief_Petty_Officer_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Senior_Chief_Petty_Officer_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Senior_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -27084,33 +27074,16 @@ At least, this is my non-expert analysis of the situation (based on the fact tha
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Master_Sergeant_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Senior_Chief_Petty_Officer_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Senior_Chief_Petty_Officer_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Senior_Master_Sergeant_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:comment>Is two ranks below:
+
+U.S. Air Force Senior Master Sergeant, U.S. Space Force Senior Master Sergeant, U.S. Coast Guard Senior Chief Petty Officer and U.S. Navy Chief Petty Officer. Call this Group A.
+
+The ranks in Group A are each directly above the rank in their respective services that is equivalent in rank to U.S. Marine Corps Gunnery Sergeant. 
+
+But U.S. Marine Corps Gunnery Sergeant is also one rank directly below the U.S. Marine Corps Master Sergeant Rank, which has no equivalent rank in the U.S. Air Force, Space Force, Navy and Coast Guard. In this case, U.S. Marine Corps Gunnery Sergeant is two ranks below U.S. Marine Corps First Sergeant, which is the U.S. Marine Corps rank that is equivalent in rank to the ranks in Group A. It is for this reason that we say that U.S. Marine Corps Gunnery Sergeant is two ranks below those ranks.</rdfs:comment>
         <rdfs:label>U.S. Marine Corps Gunnery Sergeant Rank</rdfs:label>
     </owl:Class>
     
@@ -27922,6 +27895,18 @@ At least, this is my non-expert analysis of the situation (based on the fact tha
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Senior_Chief_Petty_Officer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Senior_Chief_Petty_Officer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Senior_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -27955,7 +27940,9 @@ At least, this is my non-expert analysis of the situation (based on the fact tha
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Command_Chief_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Two ranks above Navy and Coast Guard Senior Chief Petty Officer Rank? These ranks are equivalent to Marine Corps and Army Master Sergeant, which are two ranks below Master Gunnery Sergeant</rdfs:comment>
+        <rdfs:comment>Two ranks above Navy and Coast Guard Senior Chief Petty Officer Rank? These ranks are equivalent to Marine Corps and Army Master Sergeant, which are two ranks below Master Gunnery Sergeant
+
+THIS INFO WAS WRONG!</rdfs:comment>
         <rdfs:label>U.S. Marine Corps Master Gunnery Sergeant Rank</rdfs:label>
     </owl:Class>
     
@@ -28055,7 +28042,19 @@ At least, this is my non-expert analysis of the situation (based on the fact tha
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Master_Sergeant_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_First_Sergeant_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Senior_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Two ranks below: U.S. Navy/Coast Guard Master Chief Petty Officer Rank, U.S. Air Force/Space Force Chief Master Sergeant Rank ???</rdfs:comment>
@@ -31233,12 +31232,6 @@ At least, this is my non-expert analysis of the situation (based on the fact tha
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Airman_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Corporal_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -31252,12 +31245,6 @@ At least, this is my non-expert analysis of the situation (based on the fact tha
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Corporal_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Specialist_4_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -31359,7 +31346,7 @@ At least, this is my non-expert analysis of the situation (based on the fact tha
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Airman_First_Class_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Airman_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -31383,7 +31370,7 @@ At least, this is my non-expert analysis of the situation (based on the fact tha
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Specialist_3_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Specialist_4_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -32133,7 +32120,7 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Sergeant_First_Class_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -32145,7 +32132,7 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Gunnery_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -32184,6 +32171,9 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Chief_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>Is two ranks above U.S. Army Sergeant First Class Rank. See the rdfs:comment for that class.
+
+Is two ranks above U.S. Army Gunnery Sergeant Rank. See the rdfs:comment for that class.</rdfs:comment>
         <rdfs:label>U.S. Navy Senior Chief Petty Officer Rank</rdfs:label>
     </owl:Class>
     
@@ -34091,6 +34081,12 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Air_Force_Senior_Master_Sergeant_rank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -34110,12 +34106,6 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Senior_Chief_Petty_Officer_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Senior_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>U.S. Space Force Master Sergeant Rank</rdfs:label>
@@ -34339,7 +34329,7 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Sergeant_First_Class_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -34351,7 +34341,7 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Gunnery_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -34369,7 +34359,7 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_First_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Sergeant_Major_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -34381,7 +34371,7 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_First_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Master_Gunnery_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -34390,6 +34380,9 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Master_Chief_Petty_Officer_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>Is two ranks above U.S. Army Sergeant First Class Rank. See the rdfs:comment for that class.
+
+Is two ranks above U.S. Army Gunnery Sergeant Rank. See the rdfs:comment for that class.</rdfs:comment>
         <rdfs:label>U.S. Space Force Senior Master Sergeant Rank</rdfs:label>
     </owl:Class>
     
@@ -34864,24 +34857,6 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Specialist_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Petty_Officer_Third_Class_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Corporal_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Petty_Officer_Third_Class_rank"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label>U.S. Space Force Specialist 3 Rank</rdfs:label>
     </owl:Class>
     
@@ -34957,7 +34932,7 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_higher_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Specialist_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Private_First_Class_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -34987,25 +34962,25 @@ Obviously, the use of the same label presented a problem ontologically.</obo:IAO
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Corporal_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Petty_Officer_Second_Class_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Petty_Officer_Third_Class_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Sergeant_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Corporal_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_one_rank_lower_than"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Petty_Officer_Second_Class_rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Petty_Officer_Third_Class_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>U.S. Space Force Specialist 4 Rank</rdfs:label>
