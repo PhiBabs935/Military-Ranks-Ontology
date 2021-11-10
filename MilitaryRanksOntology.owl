@@ -6092,7 +6092,7 @@ Consider by contrast the rank of Senior Airman (x) within the Air Force (t) and 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Automated_Promotion_to_U.S._Army_First_Lieutenant_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_First_Lieutenant_Rank"/>
         <obo:IAO_0000116>A U.S. Army Promotion Approval Authority is any commander holding the U.S. Army Lieutenant Colonel Rank or higher, or who is frocked at the LTC Rank, and is authorized to promote an officer to the LTC rank or temporary CW2 rank.</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army First Lieutenant Rank in which some U.S. Army Promotion Approval Authority uses an automated promotion system to advance some U.S. Army Second Lieutenant who is under their command to the U.S. Army First Lieutenant Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army First Lieutenant Rank in which some U.S. Army Promotion Approval Authority uses an automated promotion system to permanently advance some U.S. Army Second Lieutenant who is under their command to the U.S. Army First Lieutenant Rank.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, Section II, §1-7:
 
 https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
@@ -6161,11 +6161,12 @@ On the 2nd to 5th day of the month prior to the promotion month, HR generates a 
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Battlefield_Promotion_to_U.S._Army_Captain_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Battlefield_Promotion_to_U.S._Army_Captain_Rank">
-        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Captain_Rank"/>
-        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Captain Rank, executed during wartime, wherein some U.S. Army Lieutenant Colonel temporarily advances some soldier within their command to the U.S. Army Captain Rank in order to fill a position vacancy within that command.</CommonCoreOntologies:definition>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Captain_Rank"/>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Captain Rank, executed during wartime, in which some U.S. Army Lieutenant Colonel appoints a Soldier within their command to a vacant position authorized for the U.S. Army Captain Rank, and advances the Soldier to that rank for the duration of their service in the qualifying position.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, Section II, §1-8(2)(c)(1-4):
 
 https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Act of Battlefield Promotion to U.S. Army Captain Rank</rdfs:label>
     </owl:Class>
     
@@ -6174,8 +6175,8 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Battlefield_Promotion_to_U.S._Army_Colonel_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Battlefield_Promotion_to_U.S._Army_Colonel_Rank">
-        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Colonel_Rank"/>
-        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Colonel Rank, executed during wartime, wherein some U.S. Army Major General temporarily advances some soldier within their command to the U.S. Army Colonel Rank in order to fill a position vacancy within that command.</CommonCoreOntologies:definition>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Colonel_Rank"/>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Colonel Rank, executed during wartime, in which some U.S. Army Major General appoints a Soldier within their command to a vacant position authorized for the U.S. Army Colonel Rank, and advances the Soldier to that rank for the duration of their service in the qualifying position.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, Section II, §1-8(2)(c)(1-4):
 
 https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
@@ -6187,8 +6188,9 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Battlefield_Promotion_to_U.S._Army_First_Lieutenant -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Battlefield_Promotion_to_U.S._Army_First_Lieutenant">
-        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_First_Lieutenant_Rank"/>
-        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army First Lieutenant Rank, executed during wartime, wherein some U.S. Army Lieutenant Colonel temporarily advances some soldier within their command to the U.S. Army Lieutenant Rank in order to fill a position vacancy within that command.</CommonCoreOntologies:definition>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_First_Lieutenant_Rank"/>
+        <obo:IAO_0000114>Requires review</obo:IAO_0000114>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army First Lieutenant Rank, executed during wartime, in which some U.S. Army Lieutenant Colonel appoints a Soldier within their command to a vacant position authorized for the U.S. Army First Lieutenant Rank, and advances the Soldier to that rank for the duration of their service in the qualifying position.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, Section II, §1-8(2)(c)(1-4):
 
 https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
@@ -6200,8 +6202,11 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Battlefield_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Battlefield_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank">
-        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank"/>
-        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Lieutenant Colonel Rank, executed during wartime, wherein some U.S. Army Major General temporarily advances some soldier within their command to the U.S. Army Lieutenant Colonel Rank in order to fill a position vacancy within that command.</CommonCoreOntologies:definition>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank"/>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Lieutenant Colonel Rank, executed during wartime, in which some U.S. Army Major General appoints a Soldier within their command to a vacant position authorized for the U.S. Army Lieutenant Colonel Rank, and advances the Soldier to that rank for the duration of their service in the qualifying position.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>AR600-8-29 &quot;Officer Promotions&quot;, §3–23, &quot;Temporary (brevet) promotions&quot; 
+
+https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
         <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, Section II, §1-8(2)(c)(1-4):
 
 https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
@@ -6213,12 +6218,103 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Battlefield_Promotion_to_U.S._Army_Major_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Battlefield_Promotion_to_U.S._Army_Major_Rank">
-        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Major_Rank"/>
-        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Major Rank, executed during wartime, wherein some U.S. Army Major General temporarily advances some soldier within their command to the U.S. Army Major Rank in order to fill a position vacancy within that command.</CommonCoreOntologies:definition>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Major_Rank"/>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Major Rank, executed during wartime, in which some U.S. Army Major General appoints a Soldier within their command to a vacant position authorized for the U.S. Army Major Rank, and advances the Soldier to that rank for the duration of their service in the qualifying position.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, Section II, §1-8(2)(c)(1-4):
 
 https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
         <rdfs:label>Act of Battlefield Promotion to U.S. Army Major Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Brevet_Promotion_to_U.S._Army_Captain_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Brevet_Promotion_to_U.S._Army_Captain_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Captain_Rank"/>
+        <obo:IAO_0000116>In AR600-8-29, at §3-23c(1)(a) it says an officer is eligible for brevet promoton if they &quot;possess the knowledge, skills, behaviors and preferences for assignment to a designated critical position.&quot; At §3-23c(1)(c) &quot;To be considered for temporary promotion, eligible officers must be serving in, or on orders to, one of the designated critical positions.&quot;
+
+I am not sure I follow understand the reference to &quot;preferences for assignment&quot;. The second quoted sentence implies that 1LTs are only brevet promoted if they are either already serving in a critical position designated for the MAJ rank, or on order to serve in one. Preference and orders seem at odds.
+
+I know that temporary promotions are terminated once the officer leaves a qualifying position. Does it have something to do with the Army preferring not to brevet promote officers who are ordered to take on a critical position but do not have a preference for it?</obo:IAO_0000116>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Captain Rank in which some U.S. Army First Lieutenant who: i) is serving in, or on orders to, a position which the Secretary of the Army has designated as a critical position and as one to be held by a U.S. Army Captain; and ii) possesses a skill which the Secretary of the Army has determined to be in critically short supply and has designated as a requirement for the position, is appointed by the President, with the advise and consent of the Senate, to the U.S. Army Captain Rank for the duration of their continued service in a qualifying position.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC 605, &quot;Promotion to certain grades for officers with critical skills: colonel, lieutenant colonel, major, captain; captain, commander, lieutenant commander, lieutenant&quot;
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section605&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:definition_source>AR600-8-29 &quot;Officer Promotions&quot;, §3–23, &quot;Temporary (brevet) promotions&quot; 
+
+https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:elucidation>Brevet promotions are part of a system. The Commanding General, Human Resources Command (CG, HRC) issues a message to unit commanders for nominations of crucial positions. They then submit reports containing their nominations to the Secretary of the Army (SECARMY). In these reports, commander provide updated information concerning the knowledge, skills, and behavior required for the position. The Director of Military Personnel and Management (DMPM) then orchestrates an HRC panel to confirm the positions as crucial. Once the SECARMY approves these confirmations, he/she designates the positions as critical on a list published by DMPM on the HRC website. Then U.S. Army First Lieutenants who possess the appropriate skills, and who either serve or will be serving in the designated critical positions, are recommended by unit commanders for brevet promotion. Brevet promotion selection boards are then held, in which the board nominates officers based on the alignment of the officer’s knowledge, skills and behavior with the requirements of the critical position. Those nominated officers who are approved for promotion by the SECARMY are then temporarily appointed by the President, with the advise and consent of the Senate, to the rank of CPT. 
+
+While serving temporarily that the rank of CPT, the officer serves concurrently in their permanent grade. This means brevet-promoted officer can be considered for permanent promotion to the rank of CPT.
+
+Temporary promotions to CPT are terminated when a modification of an officer&apos;s orders render the officer no longer eligible for that rank, on the date the officer leaves the qualifying position.
+
+[See AR600-8-29 &quot;Officer Promotions&quot;, §3–23, &quot;Temporary (brevet) promotions&quot;]</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
+        <rdfs:label>Act of Brevet Promotion to U.S. Army Captain Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Brevet_Promotion_to_U.S._Army_Colonel_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Brevet_Promotion_to_U.S._Army_Colonel_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Colonel_Rank"/>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Colonel Rank in which some U.S. Army Lieutenant Colonel who: i) is serving in, or on orders to, a position which the Secretary of the Army has designated as a critical position and as one to be held by a U.S. Army Colonel; and ii) possesses a skill which the Secretary of the Army has determined to be in critically short supply and has designated as a requirement for the position, is appointed by the President, with the advise and consent of the Senate, to the U.S. Army Colonel Rank, but only for the duration of their service in a qualifying position.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC 605, &quot;Promotion to certain grades for officers with critical skills: colonel, lieutenant colonel, major, captain; captain, commander, lieutenant commander, lieutenant&quot;
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section605&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:definition_source>AR600-8-29 &quot;Officer Promotions&quot;, §3–23, &quot;Temporary (brevet) promotions&quot; 
+
+https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
+        <rdfs:label>Act of Brevet Promotion to U.S. Army Colonel Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Brevet_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Brevet_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank"/>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Lieutenant Colonel Rank in which some U.S. Army Major who: i) is serving in, or on orders to, a position which the Secretary of the Army has designated as a critical position and as one to be held by a U.S. Army Lieutenant Colonel; and ii) possesses a skill which the Secretary of the Army has determined to be in critically short supply and has designated as a requirement for the position, is appointed by the President, with the advise and consent of the Senate, to the U.S. Army Lieutenant Colonel Rank, but only for the duration of their service in a qualifying position.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC 605, &quot;Promotion to certain grades for officers with critical skills: colonel, lieutenant colonel, major, captain; captain, commander, lieutenant commander, lieutenant&quot;
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section605&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:definition_source>AR600-8-29 &quot;Officer Promotions&quot;, §3–23, &quot;Temporary (brevet) promotions&quot; 
+
+https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
+        <rdfs:label>Act of Brevet Promotion to U.S. Army Lieutenant Colonel Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Brevet_Promotion_to_U.S._Army_Major_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Brevet_Promotion_to_U.S._Army_Major_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Major_Rank"/>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Major Rank in which some U.S. Army Captain who: i) is serving in, or on orders to, a position which the Secretary of the Army has designated as a critical position and as one to be held by a U.S. Army Major; and ii) possesses a skill which the Secretary of the Army has determined to be in critically short supply and has designated as a requirement for the position, is appointed by the President, with the advise and consent of the Senate, to the U.S. Army Major Rank, but only for the duration of their service in a qualifying position.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC 605, &quot;Promotion to certain grades for officers with critical skills: colonel, lieutenant colonel, major, captain; captain, commander, lieutenant commander, lieutenant&quot;
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section605&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:definition_source>AR600-8-29 &quot;Officer Promotions&quot;, §3–23, &quot;Temporary (brevet) promotions&quot; 
+
+https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
+        <rdfs:label>Act of Brevet Promotion to U.S. Army Major Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Centralized_Promotion_to_U.S._Army_Brigadier_General_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Centralized_Promotion_to_U.S._Army_Brigadier_General_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Brigadier_General_Rank"/>
+        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Brigadier General Rank in which Human Resources Command publishes a promotion order declaring that some U.S. Army Colonel, who has been approved for advancement to the U.S. Army Brigadier General Rank by the President (or the President&apos;s designee) with the advise and consent of the Senate, is advanced to that rank effective on the date announced in the order.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC, 624: https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section624&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:definition_source>AR600-8-29, Chapter 3, Managing Promotions:
+https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
+        <rdfs:label>Act of Centralized Promotion to U.S. Army Brigadier General Rank</rdfs:label>
     </owl:Class>
     
 
@@ -6230,14 +6326,15 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
         <obo:IAO_0000116>Part of the U.S. Army&apos;s centralized officer promotion process</obo:IAO_0000116>
         <obo:IAO_0000116>Promotions to the rank of CPT, unlike the rank of MAJ or above, only require the approval of the President and not the Senate.</obo:IAO_0000116>
         <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Captain Rank in which Human Resources Command publishes a promotion order which declares that some U.S. Army First Lieutenant, who has been approved for advancement to the U.S. Army Captain Rank by the President (or the President&apos;s designee), is advanced to that rank effective on the date announced in the order.</CommonCoreOntologies:definition>
-        <CommonCoreOntologies:definition_source>10 USC, 624(a)(3)(A-E) and 624(c): https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section624&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
-        <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, §3-3b:
+        <CommonCoreOntologies:definition_source>10 USC, 624(a)(3)(A-E) and 624: https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section624&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, Chapter 3, Managing Promotions:
 https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
         <CommonCoreOntologies:elucidation>There are two sorts of centralized promotion to the U.S. Army Captain Rank. 
 
 The first uses the same procedure as in other commissioned officer promotions. A promotion selection board (PSB) is convened and the board recommends eligible U.S. Army First Lieutenants for promotion. Once the board&apos;s recommendations are approved by the Secretary of the Army (SECARMY) and by the President (or the President&apos;s designee) the eligible officers are placed on a Centralized Officer Promotion List, from which they are subsequently promoted according to the needs of the Army.
 
 The second procedure is slightly different in that promotion selection boards are not convened. From AR600-8-29, 2-13a: &quot;When the needs of the Army require, the SECARMY may recommend the promotion of all 1LTs in the promotion zone who are fully qualified for promotion to CPT using an all-qualified officers list in lieu of convening a PSB.&quot; The records of all eligible 1LTs are reviewed by a promotion screening authority, and then the screening authority places the names of officers on a recommended all-fully qualified officers list unless the officer&apos;s file contains on or more of the documents listed in AR600-8-29, 2-13a(2)(a-e). The list is then sent to the SECARMY for approval before being transmitted to the President for approval. Once approved by the President, all the 1LTs named on the list may then be promoted from the list. This procedure is used only in cases where the SECARMY has determined that all officers named on the list are needed in the grade of CPT in order to accomplish mission objectives. See 10 USC 624(a)(3)(A-E).</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Act of Centralized Promotion to U.S. Army Captain Rank</rdfs:label>
     </owl:Class>
     
@@ -6249,8 +6346,8 @@ The second procedure is slightly different in that promotion selection boards ar
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Colonel_Rank"/>
         <obo:IAO_0000116>Part of the U.S. Army&apos;s centralized officer promotion process</obo:IAO_0000116>
         <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Colonel Rank in which Human Resources Command publishes a promotion order which declares that some U.S. Army Lieutenant Colonel, who has been approved for advancement to the U.S. Army Colonel Rank by the President (or the President&apos;s designee) with the advise and consent of the Senate, is advanced to that rank effective on the date announced in the order.</CommonCoreOntologies:definition>
-        <CommonCoreOntologies:definition_source>10 USC, 624(c): https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section624&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
-        <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, §3-3b:
+        <CommonCoreOntologies:definition_source>10 USC, 624: https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section624&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, Chapter 3, Managing Promotions:
 https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
         <rdfs:label>Act of Centralized Promotion to U.S. Army Colonel Rank</rdfs:label>
     </owl:Class>
@@ -6268,16 +6365,27 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
     
 
 
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Centralized_Promotion_to_U.S._Army_Major_General_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Centralized_Promotion_to_U.S._Army_Major_General_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Major_General_Rank"/>
+        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Major General Rank in which Human Resources Command publishes a promotion order declaring that some U.S. Army Brigadier General, who has been approved for advancement to the U.S. Army Major General Rank by the President (or the President&apos;s designee) with the advise and consent of the Senate, is advanced to that rank effective on the date announced in the order.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC, 624: https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section624&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:definition_source>AR600-8-29, Chapter 3, Managing Promotions:
+https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
+        <rdfs:label>Act of Centralized Promotion to U.S. Army Major General Rank</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Centralized_Promotion_to_U.S._Army_Major_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Centralized_Promotion_to_U.S._Army_Major_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Major_Rank"/>
         <obo:IAO_0000116>Part of the U.S. Army&apos;s centralized officer promotion process.</obo:IAO_0000116>
-        <obo:IAO_0000116>[Not sure about this comment anymore; 10/31/2021] From what I understand, commission is something separate but connected to the act of promotion in the case of of promotions to officer ranks in the grades of O-4 through O-8. The officer is promoted from the promotion list by order of HQDA, and then the President confirms the promotion by appointment/commission, with the advice and consent of the Senate.</obo:IAO_0000116>
         <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Major Rank in which Human Resources Command publishes a promotion order which declares that some U.S. Army Captain, who has been approved for advancement to the U.S. Army Major Rank by the President (or the President&apos;s designee) with the advise and consent of the Senate, is advanced to that rank effective on the date announced in the order.</CommonCoreOntologies:definition>
-        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Major Rank in which some U.S. Army Captain, who is named on a centralized officer promotion list for the U.S. Army Major Rank, is advanced to that rank by Human Resources Command via a Department of the Army promotion order, with the approval of the President and confirmation of the U.S. Senate.</CommonCoreOntologies:definition>
-        <CommonCoreOntologies:definition_source>10 USC, 624(c): https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section624&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
-        <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, §3-3b:
+        <CommonCoreOntologies:definition_source>10 USC, 624: https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section624&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:definition_source>AR600-8-29, Chapter 3, Managing Promotions:
 https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
         <rdfs:label>Act of Centralized Promotion to U.S. Army Major Rank</rdfs:label>
     </owl:Class>
@@ -6288,7 +6396,10 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Centralized_U.S._Army_Commissioned_Officer_Promotion">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Commissioned_Officer_Promotion"/>
-        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion that is part of the U.S. Army&apos;s centralized officer promotion system, in which some U.S. Army Commissioned Officer, who holds a rank above the U.S. Army Second Lieutenant Rank but below the U.S. Army Major General Rank, and who has been approved by the President (or the President&apos;s designee) for advancement to the next higher U.S. Army Commissioned Officer Rank, is advanced to that rank via publication of a Human Resources Command promotion order, effective the date announced in the order. Promotions to the U.S. Army Major Rank and above are made with the advice and consent of the Senate.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion in which some U.S. Army Commissioned Officer, who holds a rank above the U.S. Army Second Lieutenant Rank but below the U.S. Army Major General Rank, and who has been approved by the President (or the President&apos;s designee) for advancement to the next higher U.S. Army Commissioned Officer Rank, is advanced to that rank via publication of a Human Resources Command promotion order, effective the date announced in the order. Promotions to the U.S. Army Major Rank and above are made with the advice and consent of the Senate.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC, 624: https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section624&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, Chapter 3, Managing Promotions:
+https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
         <CommonCoreOntologies:elucidation>The act of promotion should be distinguished from the act of promotion pin-on, a ceremonial procedure in which the rank insignia is physically pinned on, typically by another officer who is senior in rank, or by a family member of the officer promoted. This ceremony is sometimes conducted before the effective date announced in the promotion order. 
 
 The effective date of the promotion may often be retroactive to the date the promotion order was published.
@@ -6298,6 +6409,7 @@ Promotions can be revoked if:
 -The officer declines the promotion prior to the effective date of the promotion order. 
 
 -It is subsequently determined that the officer is not qualified for promotion.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:comment>DEFINED CLASS</rdfs:comment>
         <rdfs:label>Act of Centralized U.S. Army Commissioned Officer Promotion</rdfs:label>
     </owl:Class>
@@ -6372,6 +6484,7 @@ This provision allows the President to appoint to some grade of military rank a 
 The exclusion of such cases seem to be accounted for in relevant military regulations. For instance, the AIR FORCE INSTRUCTION 36-2501, &apos;Officer Promotions and Selective Continuation&apos;: explicitly defines &apos;promotion&apos; in its terms list as  &quot;An advancement in grade that is not the result of a new original appointment.&quot; (see p. 91)
 
 This of course raises an issue. Officer cadets have ranks, and are technically, taking on a higher Military Rank. The definition may need refinement so that it does not count this as a case of promotion.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Act of Military Rank Promotion</rdfs:label>
     </owl:Class>
     
@@ -6404,6 +6517,7 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfDeclarativeCommunication"/>
+        <obo:IAO_0000116>Should be in a higher ontology.</obo:IAO_0000116>
         <obo:IAO_0000116>Since Agents can be either individual person&apos;s, or an organization, the Agent in question may be a promotion board.</obo:IAO_0000116>
         <CommonCoreOntologies:definition>An Act of Declarative Communication in which an Agent, realizing an Authority Role derived from that Agent&apos;s rank or position within some Organization, advances a Person within that Organization, or related Organization, to a higher rank or position.</CommonCoreOntologies:definition>
         <rdfs:label>Act of Promotion</rdfs:label>
@@ -6415,7 +6529,8 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Brigadier_General_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Commissioned_Officer_Promotion"/>
-        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Brigadier General Rank in which Human Resources Command publishes a promotion order declaring that some U.S. Army Colonel, who has been approved for advancement to the U.S. Army Brigadier General Rank by the President (or the President&apos;s designee) with the advise and consent of the Senate, is advanced to that rank effective on the date announced in the order.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion in which some U.S. Army Soldier of a lower rank is assigned the U.S. Army Brigadier General Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Act of Promotion to U.S. Army Brigadier General Rank</rdfs:label>
     </owl:Class>
     
@@ -6425,11 +6540,8 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Captain_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Commissioned_Officer_Promotion"/>
-        <obo:IAO_0000116>Add a subclass for &apos;all-fully qualified personnel&apos; promotions as authorized by 10 USC 624(3)(A)-(E). 
-
-Different from regular centralized promotion to CPT?</obo:IAO_0000116>
-        <obo:IAO_0000116>Officer Promotions: 2-11d names of officers recommended and approved for promotion to CPT are placed in order of seniority on promotion list published by HRC. [only president approval needed for CPT]</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion in which some U.S. Army Soldier is advanced, either temporarily or permanently, to the U.S. Army Captain Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion in which some U.S. Army Soldier of a lower rank is assigned the U.S. Army Captain Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Act of Promotion to U.S. Army Captain Rank</rdfs:label>
     </owl:Class>
     
@@ -6503,7 +6615,8 @@ The promotion ceremony may be conducted before the effective date of promotion, 
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Colonel_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Commissioned_Officer_Promotion"/>
-        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion wherein some U.S. Army Soldier is advanced, either temporarily or permanently, to the U.S. Army Colonel Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion wherein some U.S. Army Soldier of a lower rank is assigned the U.S. Army Colonel Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Act of Promotion to U.S. Army Colonel Rank</rdfs:label>
     </owl:Class>
     
@@ -6529,14 +6642,7 @@ The promotion ceremony may be conducted before the effective date of promotion, 
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_First_Lieutenant_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Commissioned_Officer_Promotion"/>
-        <obo:IAO_0000116>A U.S. Army Promotion Approval Authority is any commander holding the U.S. Army Lieutenant Colonel Rank or higher, or who is frocked at the LTC Rank, and is authorized to promote an officer to the LTC rank or temporary CW2 rank.</obo:IAO_0000116>
-        <obo:IAO_0000116>An Act of U.S. Army Commissioned Officer Promotion wherein some U.S. Army Commander who is a Promotion Approval Authority advances, either permanenty or temporarily, some U.S. Army Soldier under their command to the U.S. Army First Lieutenant Rank.
-
-This was an old definition. This won&apos;t work (indeed the same problem applies to nearly all the definitions so far). By 10 USC 603 the President has the authority in times of war and emergency to promote any qualified person --whether or not they are already a member of the armed forces-- to any rank. That poses a problem for the definition of &apos;Act of Military Rank Promotion&apos;.</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion in which some U.S. Army Soldier is advanced, either temporarily or permanently, to the U.S. Army First Lieutenant Rank.</CommonCoreOntologies:definition>
-        <CommonCoreOntologies:definition_source>Army Regulation 600–8–29, Section II, §1-7:
-
-https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion in which some U.S. Army Soldier of a lower rank is assigned the U.S. Army First Lieutenant Rank.</CommonCoreOntologies:definition>
         <rdfs:label>Act of Promotion to U.S. Army First Lieutenant Rank</rdfs:label>
     </owl:Class>
     
@@ -6581,6 +6687,7 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Commissioned_Officer_Promotion"/>
+        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion wherein some U.S. Army Soldier of a lower rank is assigned the U.S. Army Lieutenant Colonel Rank.</CommonCoreOntologies:definition>
         <rdfs:label>Act of Promotion to U.S. Army Lieutenant Colonel Rank</rdfs:label>
     </owl:Class>
     
@@ -6607,7 +6714,7 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Major_General_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Commissioned_Officer_Promotion"/>
-        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion in which Human Resources Command publishes a promotion order which declares that some U.S. Army Brigadier General, who has been approved for advancement to the U.S. Army Major General Rank by the President (or the President&apos;s designee) with the advise and consent of the Senate, is advanced to that rank effective on the date announced in the order.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion in which some U.S. Army Soldier of a lower rank is assigned the U.S. Army Major General Rank.</CommonCoreOntologies:definition>
         <rdfs:label>Act of Promotion to U.S. Army Major General Rank</rdfs:label>
     </owl:Class>
     
@@ -6617,6 +6724,7 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Major_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Commissioned_Officer_Promotion"/>
+        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion in which some U.S. Army Soldier of a lower rank is assigned the U.S. Army Major Rank.</CommonCoreOntologies:definition>
         <rdfs:label>Act of Promotion to U.S. Army Major Rank</rdfs:label>
     </owl:Class>
     
@@ -6863,29 +6971,7 @@ Secretary of the Department concerned reviews the report, then sends it to the C
 3-2f: promotion lists are not promotion orders. &quot;Promotions will only be officially announced by HRC promotion orders.&quot;
 
 3-3a/b: promotion sequence numbers for officers to be promoted are announced in monthly MILPER messages by HRC. Then HRC publishes a consolidation of DA special orders which include grade an effective active date of rank.</obo:IAO_0000116>
-        <obo:IAO_0000116>HQDA promotion orders for advancement to the U.S. Army Captain Rank or higher are announced by Human Resources Command when additional officers in those ranks are needed within each competitive category, and the order of promotions are made according to the order in which names appear on the promotion list. Officer names are placed on the promotion list in order of seniority or based on particular merit, as determined by the promotion selection board. 
-
-The above is in accordance with Title 10 USC, Subtitle A, Part II, Ch. 36, Subchapter II, §624(a)(1-2)
-
-https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section624&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim
-
-See also AR600-8-29, Officer Promotions, 3-1</obo:IAO_0000116>
-        <obo:IAO_0000116>I have been trying to square what is said in Title 10 USC, Subtitle A, Part II, Ch. 36, Subchapter II, §624 with what is said in the most relevant Army regulation. In Chapter 3 of AR600-8-29, &apos;Officer Promotions&apos;, everything indicates that officer are promoted to the next rank from promotion lists, at least up until MAJ GEN. A promotion selection board determines which eligible soldiers are best qualified for promotion to the next rank and provides a report of their recommendation to the SECARMY for review. Eventually, this report is sent to the President for approval, or the President&apos;s designee (according to §2-10a, the President has delegated this authority to SECDEF, who in turn has designated it to the Principal Deputy Under Secretary of Defense for Personnel and Readiness). This is because in the case of officers, promotion boards are making recommendations to the president. 
-
-Once the President or the president&apos;s designee approves the board report, it is compiled into a promotion list by the SECARMY, ordering names of those approved for promotion according to seniority, but also merit as determined by the promotion board. Officers are given a promotion sequence number. And then officers on the list are basically waiting their turn to be promoted. An officer cannot be promoted from the list until there is a need for an officer at the rank (such as a position vacancy that requires or authorizes that rank).
-
-As far as promotions go, I am not sure exactly where, timing-wise, the Senate confirmation part actually comes in. The Air Force regulation on officer regulations makes clear the Senate role [https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2501/afi36-2501.pdf]. An officer cannot be promoted until the Senate confirms the promotion list that officer is named on. 
-
-What I need to reconcile is this, from 10 USC: &quot;(c) Appointments under this section shall be made by the President, by and with the advice and consent of the Senate&quot;. What this is referring to is appointments in the grade of MAJ or above. What does appointment here mean? Often I see that it is different from promotion. It means appointment to an office. It does not seem that it means appointment to a rank. I gather that it just means appointment to a billet or position that is held at that grade.
-
-On the other hand, AR600-8-29, §2-10b &quot;Promotions to the grade of MAJ and above must be confirmed by the Senate in accordance with 10 USC 624(c)&quot; citing the title 10 clause that appointments are made by the President with the advice and consent of the Senate. But I wonder if this is simply a case of the AR not making the fine-grained distinction between parts of the promotion process --such as promotion board recommendation and Senate confirmation of promotion lists, i.e. the Senate confirming that the soldiers are qualified for promotion--and the act of promotion that follows it, and is authorized by the preceding Senate confirmation of the promotion list.
-
-Of course, there are also appointments in the sense of appointments to positions within the grade. Is Senate confirmation of such position-appointments something separate?</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>An Act of U.S. Army Promotion in which an Agent holding an Authority Role within either the U.S. Government, the Department of the Army, or the Army, realizes that authority by advancing some U.S. Army Commissioned Officer to a higher U.S. Army Commissioned Officer Rank.</CommonCoreOntologies:definition>
-        <CommonCoreOntologies:elucidation>The act of promotion should be distinguished from the act of promotion pin-on, a ceremonial procedure in which the rank insignia is physically pinned on, typically by another officer who is senior in rank, or by a family member of the officer promoted. This ceremony is sometimes conducted before the effective date of promotion prescribed on the promotion order. 
-
-The effective date of the promotion may sometimes even be retroactive to the date on which the act of promotion occurred.</CommonCoreOntologies:elucidation>
-        <rdfs:comment>Current definitions for acts of promotion to MAJ and above are worded so that the advancement to those ranks are conducted &apos;with the approval of the President and confirmation of the U.S. Senate.&apos;
+        <obo:IAO_0000116>Current definitions for acts of promotion to MAJ and above are worded so that the advancement to those ranks are conducted &apos;with the approval of the President and confirmation of the U.S. Senate.&apos;
 
 These classes concern specifically the act of promotion. From my understanding, the act of promotion involves the publication of DA promotion order specifying the effective date of promotion, which is the Active Date of Rank prescribed on the order. 
 
@@ -6906,7 +6992,30 @@ Also according to AR600-8-29:
 §1-4(d)(2): on behalf of the DCS, G-1, the commanding general (CG), HRC conducts and supervises officer promotion functions. 
 [The DSC has delegated to the CG, HRC control over centralized Army promotions. Similar to how the President delegates his authority to approve the recommendations of promotion selection boards to the Secretary of Defense, who has delegated that authority to the Principal Deputy Under Secretary of Defense for Personnel and Readiness (§2-10a)
 
-This implies that HRC is an agent in promotions.</rdfs:comment>
+This implies that HRC is an agent in promotions.</obo:IAO_0000116>
+        <obo:IAO_0000116>HQDA promotion orders for advancement to the U.S. Army Captain Rank or higher are announced by Human Resources Command when additional officers in those ranks are needed within each competitive category, and the order of promotions are made according to the order in which names appear on the promotion list. Officer names are placed on the promotion list in order of seniority or based on particular merit, as determined by the promotion selection board. 
+
+The above is in accordance with Title 10 USC, Subtitle A, Part II, Ch. 36, Subchapter II, §624(a)(1-2)
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section624&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim
+
+See also AR600-8-29, Officer Promotions, 3-1</obo:IAO_0000116>
+        <obo:IAO_0000116>I have been trying to square what is said in Title 10 USC, Subtitle A, Part II, Ch. 36, Subchapter II, §624 with what is said in the most relevant Army regulation. In Chapter 3 of AR600-8-29, &apos;Officer Promotions&apos;, everything indicates that officer are promoted to the next rank from promotion lists, at least up until MAJ GEN. A promotion selection board determines which eligible soldiers are best qualified for promotion to the next rank and provides a report of their recommendation to the SECARMY for review. Eventually, this report is sent to the President for approval, or the President&apos;s designee (according to §2-10a, the President has delegated this authority to SECDEF, who in turn has designated it to the Principal Deputy Under Secretary of Defense for Personnel and Readiness). This is because in the case of officers, promotion boards are making recommendations to the president. 
+
+Once the President or the president&apos;s designee approves the board report, it is compiled into a promotion list by the SECARMY, ordering names of those approved for promotion according to seniority, but also merit as determined by the promotion board. Officers are given a promotion sequence number. And then officers on the list are basically waiting their turn to be promoted. An officer cannot be promoted from the list until there is a need for an officer at the rank (such as a position vacancy that requires or authorizes that rank).
+
+As far as promotions go, I am not sure exactly where, timing-wise, the Senate confirmation part actually comes in. The Air Force regulation on officer regulations makes clear the Senate role [https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2501/afi36-2501.pdf]. An officer cannot be promoted until the Senate confirms the promotion list that officer is named on. 
+
+What I need to reconcile is this, from 10 USC: &quot;(c) Appointments under this section shall be made by the President, by and with the advice and consent of the Senate&quot;. What this is referring to is appointments in the grade of MAJ or above. What does appointment here mean? Often I see that it is different from promotion. It means appointment to an office. It does not seem that it means appointment to a rank. I gather that it just means appointment to a billet or position that is held at that grade.
+
+On the other hand, AR600-8-29, §2-10b &quot;Promotions to the grade of MAJ and above must be confirmed by the Senate in accordance with 10 USC 624(c)&quot; citing the title 10 clause that appointments are made by the President with the advice and consent of the Senate. But I wonder if this is simply a case of the AR not making the fine-grained distinction between parts of the promotion process --such as promotion board recommendation and Senate confirmation of promotion lists, i.e. the Senate confirming that the soldiers are qualified for promotion--and the act of promotion that follows it, and is authorized by the preceding Senate confirmation of the promotion list.
+
+Of course, there are also appointments in the sense of appointments to positions within the grade. Is Senate confirmation of such position-appointments something separate?</obo:IAO_0000116>
+        <CommonCoreOntologies:definition>An Act of U.S. Army Promotion in which an Agent holding an Authority Role within either the U.S. Government, the Department of the Army, or the Army, realizes that authority by advancing some U.S. Army Commissioned Officer to a U.S. Army Commissioned Officer Rank higher than the officer&apos;s current rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>The act of promotion should be distinguished from the act of promotion pin-on, a ceremonial procedure in which the rank insignia is physically pinned on, typically by another officer who is senior in rank, or by a family member of the officer promoted. This ceremony is sometimes conducted before the effective date of promotion prescribed on the promotion order. 
+
+The effective date of the promotion may sometimes even be retroactive to the date on which the act of promotion occurred.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Act of U.S. Army Commissioned Officer Promotion</rdfs:label>
     </owl:Class>
     
@@ -6926,10 +7035,8 @@ This implies that HRC is an agent in promotions.</rdfs:comment>
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Promotion">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Military_Rank_Promotion"/>
-        <obo:IAO_0000116>Need to determine:
-
-The relationship between battlefield promotions, which are conducted by certain commanders in the &quot;field&quot;, and presidential appointments to grades during war or national emergencies as authorized by 10 USC 603.</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>An Act of Promotion in which an Agent holding an Authority Role within either the U.S. Government, the Department of the Army, or the Army, realizes that authority by advancing some U.S. Army Soldier to a higher Military Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>An Act of Promotion in which an Agent holding an Authority Role within either the U.S. Government, the Department of the Army, or the Army, realizes that authority by advancing some U.S. Army Soldier to a Military Rank higher than the Soldier&apos;s current rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Act of U.S. Army Promotion</rdfs:label>
     </owl:Class>
     
@@ -13671,6 +13778,8 @@ Keep as DEFINED CLASS??</obo:IAO_0000116>
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Commissioned_Officer_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Military_Rank"/>
         <CommonCoreOntologies:definition>A Military Rank appointed via Military Commission, usually following some formal education and training as a leadership and management generalist, that specifies an Authority Role authorized by the head of state.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:is_curated_in_ontology>http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology</CommonCoreOntologies:is_curated_in_ontology>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Commissioned Officer Rank</rdfs:label>
     </owl:Class>
     
@@ -18313,15 +18422,15 @@ See Table 3-1: https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN17424_R60
         </rdfs:subClassOf>
         <obo:IAO_0000116>Not sure exactly where this should go. Should perhaps go under a more specific type of descriptive ICE. 
 
-We use &apos;or&apos; rather than &apos;and&apos; because not all ranks confer commanding power.
-
-&apos;Describing&apos; is probably not enough. Shouldn&apos;t it be authorative? Something that implies that the associated role is accepted in virtue of collective acceptance of the relevant person&apos;s ability to issue bining directives (pace the definition of CCO:Authority Role)?</obo:IAO_0000116>
-        <obo:IAO_0000116>The clause in the definition concerning enlistment covers the case of the lowest ranks, such as &apos;private&apos;, which are assigned upon entry into the Armed Forces.
+&apos;Describing&apos; may not be enough. Shouldn&apos;t it be authorative? Something that implies that the associated role is accepted in virtue of collective acceptance of the relevant person&apos;s ability to issue bining directives (pace the definition of CCO:Authority Role)?</obo:IAO_0000116>
+        <CommonCoreOntologies:definition>An Information Content Entity held by Person who is a member of an Armed Force, which: i) specifies both the Person&apos;s place in the order of precedence among members of that Armed Force and the Authority Role(s) or responsibilities the Person either holds, or is authorized to hold, in that Armed Force; ii) is bestowed upon that Person through some appointment, through some promotion, or via enlistment.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>The clause in the definition concerning enlistment covers the case of the lowest ranks, such as &apos;U.S. Army Private Rank&apos;, &apos;U.S. Marine Corps Private Rank&apos;, &apos;U.S. Air Force Airman Recruit Rank&apos; and &apos;U.S. Navy Seaman Recuit Rank&apos;, which are assigned upon entry into the Armed Forces.
 
 Enlisted soldiers can move up the ranks through promotion.
 
-Appointments are the means by which Commissioned Officer and Non-Commissioned Officer ranks are bestowed.</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>An Information Content Entity held by Person who is a member of an Armed Force, which: i) specifies both the Person&apos;s place in the order of precedence among members of that Armed Force and the Authority Role(s) or responsibilities the Person either holds, or is authorized to hold, in that Armed Force; ii) is bestowed upon that Person through some appointment, through some promotion, or via enlistment.</CommonCoreOntologies:definition>
+Appointments are the means by which Commissioned Officer and Non-Commissioned Officer ranks are bestowed.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:is_curated_in_ontology>http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology</CommonCoreOntologies:is_curated_in_ontology>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Military Rank</rdfs:label>
     </owl:Class>
     
@@ -25382,6 +25491,67 @@ Cf: https://en.wikipedia.org/wiki/Enlisted_Professional_Military_Education</obo:
     
 
 
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Captain_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Captain_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Captain_Rank"/>
+        <obo:IAO_0000114>Requires review</obo:IAO_0000114>
+        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Captain Rank in which some U.S. Army Soldier of a lower permanent rank is given the U.S. Army Captain Rank, but only for the duration of that Soldier&apos;s appointment to a specific position, or assignment to a specific task or mission, that is authorized for that rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>Such a promotion is terminated at the termination of the Soldier&apos;s service in the qualifying position, task, or mission.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
+        <rdfs:label>Temporary Promotion to U.S. Army Captain Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Colonel_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Colonel_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Colonel_Rank"/>
+        <obo:IAO_0000114>Requires review</obo:IAO_0000114>
+        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Colonel Rank in which some U.S. Army Soldier of a lower permanent rank is given the U.S. Army Colonel Rank, but only for the duration of that Soldier&apos;s appointment to a specific position, or assignment to a specific task or mission, that is authorized for that rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>Such a promotion is terminated at the termination of the Soldier&apos;s service in the qualifying position, task, or mission.</CommonCoreOntologies:elucidation>
+        <rdfs:label>Temporary Promotion to U.S. Army Colonel Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_First_Lieutenant_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_First_Lieutenant_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_First_Lieutenant_Rank"/>
+        <obo:IAO_0000114>Requires review</obo:IAO_0000114>
+        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army First Lieutenant Rank in which some U.S. Army Soldier of a lower permanent rank is given the U.S. Army First Lieutenant Rank, but only for the duration of that Soldier&apos;s appointment to a specific position, or assignment to a specific task or mission, that is authorized for that rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>Such a promotion is terminated at the termination of the Soldier&apos;s service in the qualifying position, task, or mission.</CommonCoreOntologies:elucidation>
+        <rdfs:label>Temporary Promotion to U.S. Army First Lieutenant Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank"/>
+        <obo:IAO_0000114>Requires review</obo:IAO_0000114>
+        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Lieutenant Colonel Rank in which some U.S. Army Soldier of a lower permanent rank is given the U.S. Army Lieutenant Colonel Rank, but only for the duration of that Soldier&apos;s appointment to a specific position, or assignment to a specific task or mission, that is authorized for that rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>Such a promotion is terminated at the termination of the Soldier&apos;s service in the qualifying position, task, or mission.</CommonCoreOntologies:elucidation>
+        <rdfs:label>Temporary Promotion to U.S. Army Lieutenant Colonel Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Major_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Major_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Major_Rank"/>
+        <obo:IAO_0000114>Requires review</obo:IAO_0000114>
+        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Major Rank in which some U.S. Army Soldier of a lower permanent rank is given the U.S. Army Major Rank, but only for the duration of that Soldier&apos;s appointment to a specific position, or assignment to a specific task or mission, that is authorized for that rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>Such a promotion is terminated at the termination of the Soldier&apos;s service in the qualifying position, task, or mission.</CommonCoreOntologies:elucidation>
+        <rdfs:label>Temporary Promotion to U.S. Army Major Rank</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Third_Lieutenant_Rank_Insignia -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Third_Lieutenant_Rank_Insignia">
@@ -25458,6 +25628,7 @@ Cf: https://en.wikipedia.org/wiki/Enlisted_Professional_Military_Education</obo:
             </owl:Class>
         </owl:equivalentClass>
         <CommonCoreOntologies:definition>A Measurement Information Content Entity that is a measurement of the time some Agent has served in the U.S. military at their current U.S. Department of Defense Pay Grade.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Time in Grade Measurement Information Content Entity</rdfs:label>
     </owl:Class>
     
@@ -27496,7 +27667,9 @@ https://www.mynavyhr.navy.mil/Portals/55/Reference/Instructions/BUPERS/BUPERSINS
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:IAO_0000116>Needs to be refined with reference to initial enlistment date (for enlisted ranks) or date commissioned (for commissioned officers).</obo:IAO_0000116>
         <CommonCoreOntologies:definition>A Measurement Information Content Entity that is a measurement of the temporal region on which some Act of Military Service occurs.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Time in Service Measurement Information Content Entity</rdfs:label>
     </owl:Class>
     
@@ -28441,6 +28614,23 @@ Paragraph 4.c.1. https://www.marines.mil/News/Messages/Messages-Display/Article/
         <CommonCoreOntologies:definition>A Time in Service Requirement for Promotion in U.S. Marine Corps Military Rank that requires some U.S. Marine Corps Sergeant to have completed a minimum of 60 months time in service, as a condition for promotion to the U.S. Marine Corps Staff Sergeant Rank.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>Paragraph 4.c.2. https://www.marines.mil/News/Messages/Messages-Display/Article/2003700/announcement-of-authority-for-early-reenlistment-delegation-of-reenlistment-app/</CommonCoreOntologies:definition_source>
         <rdfs:label>Time in Service Requirement for Promotion to U.S. Marine Corps Staff Sergeant Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Time_of_War_and_National_Emergency_Promotion_to_U.S._Army_Captain_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Time_of_War_and_National_Emergency_Promotion_to_U.S._Army_Captain_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Captain_Rank"/>
+        <obo:IAO_0000116>I say &quot;who holds a rank below U.S. Army Captain Rank&quot; because it appears to me that 10 USC 603, which authorizes such promotions, also authorizes the President to appoint a soldier of a higher rank to a lower rank (e.g., if  there is a critical shortage of CPTs due to wartime casualties, but still plenty of qualified Majors).
+
+That is what 10 USC 603(d) appears to me to suggest: &quot;An appointment under this section does not change the permanent status of a member of the armed forces so appointed. A member who is appointed under this section shall not incur any reduction in the pay and allowances to which the member was entitled, by virtue of his permanent status, at the time of his appointment under this section.&quot; I took this to mean that when appointed to a position at a lower rank the officer would still be paid at the higher rate tied to their permanently held higher rank.</obo:IAO_0000116>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Captain Rank, executed during a time of war, or during a time of national emergency declared by the Congress or President, in which some qualified U.S. Army Soldier who holds a rank below the U.S. Army Captain Rank, is temporarily appointed in the U.S. Army Captain Rank by the President.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC 603, &quot;Appointments in time of war or national emergency&quot;
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section603&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
+        <rdfs:label>War and National Emergency Promotion to U.S. Army Captain Rank</rdfs:label>
     </owl:Class>
     
 
@@ -32954,6 +33144,7 @@ Similarly, the teacher and mentor role are not the same, but sometimes the teach
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Commissioned_Officer_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Commissioned_Officer_Rank"/>
+        <CommonCoreOntologies:is_curated_in_ontology>http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology</CommonCoreOntologies:is_curated_in_ontology>
         <rdfs:label>U.S. Army Commissioned Officer Rank</rdfs:label>
     </owl:Class>
     
@@ -37016,6 +37207,7 @@ This may change in the future given new Army policy on promotions to the Sergean
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Coast_Guard_Commissioned_Officer_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Commissioned_Officer_Rank"/>
+        <CommonCoreOntologies:is_curated_in_ontology>http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology</CommonCoreOntologies:is_curated_in_ontology>
         <rdfs:label>U.S. Coast Guard Commissioned Officer Rank</rdfs:label>
     </owl:Class>
     
@@ -40400,6 +40592,7 @@ requires vetting</obo:IAO_0000114>
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Marine_Corps_Commissioned_Officer_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Commissioned_Officer_Rank"/>
+        <CommonCoreOntologies:is_curated_in_ontology>http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology</CommonCoreOntologies:is_curated_in_ontology>
         <rdfs:label>U.S. Marine Corps Commissioned Officer Rank</rdfs:label>
     </owl:Class>
     
@@ -44285,6 +44478,7 @@ serves as a Senior enlisted advisor.</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Navy_Commissioned_Officer_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Commissioned_Officer_Rank"/>
+        <CommonCoreOntologies:is_curated_in_ontology>http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology</CommonCoreOntologies:is_curated_in_ontology>
         <rdfs:label>U.S. Navy Commissioned Officer Rank</rdfs:label>
     </owl:Class>
     
@@ -48089,6 +48283,7 @@ https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granulei
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Commissioned_Officer_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Commissioned_Officer_Rank"/>
+        <CommonCoreOntologies:is_curated_in_ontology>http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology</CommonCoreOntologies:is_curated_in_ontology>
         <rdfs:label>U.S. Space Force Commissioned Officer Rank</rdfs:label>
     </owl:Class>
     
@@ -50807,6 +51002,85 @@ Paragraphs 5-2c, 5-2a, 5-5b(3), 5-7g, and 5-16a.</CommonCoreOntologies:definitio
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/WO-5">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/NATO_Rank_Scale_Code"/>
         <rdfs:label>WO-5</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_Brigadier_General_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_Brigadier_General_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Brigadier_General_Rank"/>
+        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Brigadier General Rank, executed during a time of war, or during a time of national emergency declared by the Congress or President, in which some qualified U.S. Army Soldier who holds a rank below the U.S. Army Brigadier General Rank, is temporarily appointed in the U.S. Army Brigadier General Rank by the President.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC 603, &quot;Appointments in time of war or national emergency&quot;
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section603&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
+        <rdfs:label>War and National Emergency Promotion to U.S. Army Brigadier General Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_Colonel_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_Colonel_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Colonel_Rank"/>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Colonel Rank, executed during a time of war, or during a time of national emergency declared by the Congress or President, in which some qualified U.S. Army Soldier who holds a rank below the U.S. Army Colonel Rank, is temporarily appointed in the U.S. Army Colonel Rank by the President.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC 603, &quot;Appointments in time of war or national emergency&quot;
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section603&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <rdfs:label>War and National Emergency Promotion to U.S. Army Colonel Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_First_Lieutenant_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_First_Lieutenant_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_First_Lieutenant_Rank"/>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army First Lieutenant Rank, executed during a time of war, or during a time of national emergency declared by the Congress or President, in which some qualified U.S. Army Soldier who holds a rank below the U.S. Army First Lieutenant Rank, is temporarily appointed in the U.S. Army First Lieutenant Rank by the President.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC 603, &quot;Appointments in time of war or national emergency&quot;
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section603&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <rdfs:label>War and National Emergency Promotion to U.S. Army First Lieutenant Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Lieutenant_Colonel_Rank"/>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Lieutenant Colonel Rank, executed during a time of war, or during a time of national emergency declared by the Congress or President, in which some qualified U.S. Army Soldier who holds a rank below the U.S. Army Lieutenant Colonel Rank, is temporarily appointed in the U.S. Army Lieutenant Colonel Rank by the President.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC 603, &quot;Appointments in time of war or national emergency&quot;
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section603&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <rdfs:label>War and National Emergency Promotion to U.S. Army Lieutenant Colonel Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_Major_General_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_Major_General_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Major_General_Rank"/>
+        <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Major General Rank, executed during a time of war, or during a time of national emergency declared by the Congress or President, in which some qualified U.S. Army Soldier who holds a rank below the U.S. Army Major General Rank, is temporarily appointed in the U.S. Army Major General Rank by the President.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC 603, &quot;Appointments in time of war or national emergency&quot;
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section603&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <rdfs:label>War and National Emergency Promotion to U.S. Army Major General Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_Major_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/War_and_National_Emergency_Promotion_to_U.S._Army_Major_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Temporary_Promotion_to_U.S._Army_Major_Rank"/>
+        <CommonCoreOntologies:definition>A Temporary Promotion to U.S. Army Major Rank, executed during a time of war, or during a time of national emergency declared by the Congress or President, in which some qualified U.S. Army Soldier who holds a rank below the U.S. Army Major Rank, is temporarily appointed in the U.S. Army Major Rank by the President.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>10 USC 603, &quot;Appointments in time of war or national emergency&quot;
+
+https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section603&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim</CommonCoreOntologies:definition_source>
+        <rdfs:label>War and National Emergency Promotion to U.S. Army Major Rank</rdfs:label>
     </owl:Class>
     
 
