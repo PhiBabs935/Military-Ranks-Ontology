@@ -1474,6 +1474,20 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     
 
 
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_inside_interval -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_inside_interval">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_contains"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_during"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <CommonCoreOntologies:definition xml:lang="en">A Temporal Interval INT2 has inside interval some Temporal Interval INT1 iff there exist Temporal Instants inst1, inst2, inst3, and inst4 such that inst1 is the starting instant of INT1, inst2 is the ending instant of INT1, inst3 is the starting instant of INT2, inst4 is the ending instant of INT2, inst3 is before inst1, and inst2 is before inst4.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/TimeOntology</CommonCoreOntologies:is_curated_in_ontology>
+        <rdfs:label xml:lang="en">has inside interval</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_member_of_located_in -->
 
     <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_member_of_located_in">
@@ -1603,9 +1617,103 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     
 
 
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/interval_contained_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/interval_contained_by">
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_contains"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_disjoint"/>
+        <CommonCoreOntologies:definition xml:lang="en">A Temporal Interval INT1 is contained by some Temporal Interval INT2 iff there exist Temporal Instants inst1, inst2, inst3, and inst4 such that inst1 is the starting instant of INT1, inst2 is the ending instant of INT1, inst3 is the starting instant of INT2, inst4 is the ending instant of INT2, inst3 is before or identical to inst1, inst2 is before or identical to inst4, and it is not the case that both inst3 is identical to inst1 and inst2 is identical to inst4.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/TimeOntology</CommonCoreOntologies:is_curated_in_ontology>
+        <rdfs:label xml:lang="en">interval contained by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/interval_contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/interval_contains">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_disjoint"/>
+        <CommonCoreOntologies:definition xml:lang="en">A Temporal Interval INT2 contains some Temporal Interval INT1 iff there exist Temporal Instants inst1, inst2, inst3, and inst4 such that inst1 is the starting instant of INT1, inst2 is the ending instant of INT1, inst3 is the starting instant of INT2, inst4 is the ending instant of INT2, inst3 is before or identical to inst1, and inst2 is before or identical to inst4, but it is not the case that both inst3 is identical to inst1 and inst2 is identical to inst4.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/TimeOntology</CommonCoreOntologies:is_curated_in_ontology>
+        <rdfs:label xml:lang="en">interval contains</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/interval_disjoint -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/interval_disjoint"/>
+    
+
+
     <!-- http://www.ontologyrepository.com/CommonCoreOntologies/interval_during -->
 
-    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/interval_during"/>
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/interval_during">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_contained_by"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <CommonCoreOntologies:definition xml:lang="en">A Temporal Interval INT1 is during some Temporal Interval INT2 iff there exist Temporal Instants inst1, inst2, inst3, and inst4 such that inst1 is the starting instant of INT1, inst2 is the ending instant of INT1, inst3 is the starting instant of INT2, inst4 is the ending instant of INT2, inst3 is before inst1, and inst2 is before inst4.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/TimeOntology</CommonCoreOntologies:is_curated_in_ontology>
+        <rdfs:label xml:lang="en">interval during</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/interval_finished_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/interval_finished_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_contains"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_finishes"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <CommonCoreOntologies:definition xml:lang="en">A Temporal Interval INT2 is finished by some Temporal Interval INT1 iff there exists Temporal Instants inst1, inst2, and inst3 such that inst 1 is the starting instant of INT1, inst2 is the ending instant of both INT1 and INT2, inst3 is the starting instant of INT2, and inst3 is before inst1.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/TimeOntology</CommonCoreOntologies:is_curated_in_ontology>
+        <rdfs:label xml:lang="en">interval finished by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/interval_finishes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/interval_finishes">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_contained_by"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <CommonCoreOntologies:definition xml:lang="en">A Temporal Interval INT1 finishes some Temporal Interval INT2 iff there exists Temporal Instants inst1, inst2, and inst3 such that inst 1 is the starting instant of INT1, inst2 is the ending instant of both INT1 and INT2, inst3 is the starting instant of INT2, and inst3 is before inst1.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/TimeOntology</CommonCoreOntologies:is_curated_in_ontology>
+        <rdfs:label xml:lang="en">interval finishes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/interval_started_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/interval_started_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_contains"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_starts"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <CommonCoreOntologies:definition xml:lang="en">A Temporal Interval INT2 is started by some Temporal Interval INT1 iff there exist Temporal Instants inst1, inst2, and inst3 such that inst1 is the starting instant of both INT1 and INT2, inst2 is the ending instant of INT1, inst3 is the ending instant of INT2 and inst2 is before inst3.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/TimeOntology</CommonCoreOntologies:is_curated_in_ontology>
+        <rdfs:label xml:lang="en">interval started by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/interval_starts -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/interval_starts">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_contained_by"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <CommonCoreOntologies:definition xml:lang="en">A Temporal Interval INT1 starts some Temporal Interval INT2 iff there exist Temporal Instants inst1, inst2, and inst3 such that inst1 is the starting instant of both INT1 and INT2, inst2 is the ending instant of INT1, inst3 is the ending instant of INT2 and inst2 is before inst3.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/TimeOntology</CommonCoreOntologies:is_curated_in_ontology>
+        <rdfs:label xml:lang="en">interval starts</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -2193,6 +2301,7 @@ But this requires cashing out and classifying the notion of &apos;level of autho
         <rdfs:range rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Military_Rank"/>
         <CommonCoreOntologies:definition>x is higher military rank than y iff the authority or responsibilities described by x are greater than the authority or responsibilities described by y.</CommonCoreOntologies:definition>
         <rdfs:comment>I don&apos;t think that standing in this relation implies in all cases a subordination relation (e.g. ranks with a non-command role)</rdfs:comment>
+        <rdfs:comment>Talk about precedence.</rdfs:comment>
         <rdfs:label>is higher military rank than</rdfs:label>
     </owl:ObjectProperty>
     
@@ -6541,7 +6650,14 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN30301-AR_600-8-29-000-WEB-1.pdf<
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Commissioning">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfOfficialDocumentation"/>
-        <CommonCoreOntologies:definition>An Act of Official Documentation through which some head of state, or some other Agent authorized to act in the name of that head of state, appoints another Agent to some high office, and which has as output some Commission.</CommonCoreOntologies:definition>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/has_output"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Commission"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Should be in a higher level ontology.</obo:IAO_0000116>
+        <CommonCoreOntologies:definition>An Act of Official Documentation in which some head of state, or some other Agent authorized to act in the name of that head of state, appoints another Agent to some high office, and which has as output some Commission.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>https://en.wikipedia.org/wiki/Commission_(document)</CommonCoreOntologies:definition_source>
         <rdfs:label>Act of Commissioning</rdfs:label>
     </owl:Class>
@@ -6767,7 +6883,7 @@ https://en.wikipedia.org/wiki/General_(United_States)
 U.S. Army Brigadier Generals and Major Generals temporarily serving at the U.S. Army General Rank retain their permanent grade of O-7 and O-9 respectively. Per: 10 USC 601(c)(1).
 
 Furthermore, an officer who permanently holds the U.S. Army Brigadier General Rank while temporarily serving at the U.S. Army General Rank is to be considered for a permanent promotion to the U.S. Army Major General Rank as if he or she was serving in their current permanent rank. Per: 10 USC 601(c)(2).</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion wherein the President, with the advice and confirmaton of the U.S. Senate, temporarily assigns some active duty U.S. Army Brigadier General, or U.S. Army Major General, to a position of importance and responsibility which the President has designated must carry the U.S. Army General Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>An Act of U.S. Army Commissioned Officer Promotion wherein the President, with the advice and confirmation of the U.S. Senate, temporarily assigns some active duty U.S. Army Brigadier General, or U.S. Army Major General, to a position of importance and responsibility which the President has designated must carry the U.S. Army General Rank.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>Section 601, Title 10, United States Code (10 USC 601): 
 
 https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granuleid%3AUSC-prelim-title10-section601&amp;num=0&amp;saved=%7CZ3JhbnVsZWlkOlVTQy1wcmVsaW0tdGl0bGUxMC1zZWN0aW9uNjE5YQ%3D%3D%7C%7C%7C0%7Cfalse%7Cprelim
@@ -7051,6 +7167,15 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN17424_R600_8_19_Admin_FI
     
 
 
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Air_Force_Commissioned_Officer_Promotion -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Air_Force_Commissioned_Officer_Promotion">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Air_Force_Promotion"/>
+        <rdfs:label>Act of U.S. Air Force Commissioned Officer Promotion</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Air_Force_Promotion -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Air_Force_Promotion">
@@ -7163,9 +7288,9 @@ The effective date of the promotion may sometimes even be retroactive to the dat
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Service -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Service">
-        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMilitaryService"/>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Military_Service"/>
         <obo:IAO_0000116>Move to a higher Mid-level ontology extension of the Event Ontology?</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>An Act of Military Service wherein some Person serves as a member of the U.S. Army.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>An Act of U.S. Military Service wherein some Person serves as a member of the U.S. Army.</CommonCoreOntologies:definition>
         <rdfs:label>Act of U.S. Army Service</rdfs:label>
     </owl:Class>
     
@@ -7663,6 +7788,24 @@ All of the following are instances of a Act of Service at Pay Grade E-4:
     
 
 
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Coast_Guard_Commissioned_Officer_Promotion -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Coast_Guard_Commissioned_Officer_Promotion">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Coast_Guard_Promotion"/>
+        <rdfs:label>Act of U.S. Coast Guard Commissioned Officer Promotion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Coast_Guard_Promotion -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Coast_Guard_Promotion">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Military_Rank_Promotion"/>
+        <rdfs:label>Act of U.S. Coast Guard Promotion</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Marine_Corps_Promotion -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Marine_Corps_Promotion">
@@ -7676,9 +7819,19 @@ All of the following are instances of a Act of Service at Pay Grade E-4:
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Marine_Corps_Service -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Marine_Corps_Service">
-        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMilitaryService"/>
-        <CommonCoreOntologies:definition>An Act of Military Service wherein some Person serves as a member of the U.S. Marine Corps.</CommonCoreOntologies:definition>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Military_Service"/>
+        <CommonCoreOntologies:definition>An Act of U.S. Military Service wherein some Person serves as a member of the U.S. Marine Corps.</CommonCoreOntologies:definition>
         <rdfs:label>Act of U.S. Marine Corps Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Military_Service -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Military_Service">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMilitaryService"/>
+        <CommonCoreOntologies:definition>An Act of Military Service wherein a Person serves as a member of some branch of the U.S. Armed Forces.</CommonCoreOntologies:definition>
+        <rdfs:label>Act of U.S. Military Service</rdfs:label>
     </owl:Class>
     
 
@@ -7686,7 +7839,8 @@ All of the following are instances of a Act of Service at Pay Grade E-4:
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Military_Service_at_Current_Department_of_Defense_Pay_Grade -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Military_Service_at_Current_Department_of_Defense_Pay_Grade">
-        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMilitaryService"/>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Military_Service"/>
+        <CommonCoreOntologies:definition>An Act of U.S. Military Service which is composed of those Acts of U.S. Military Service a Person is an agent in over the duration of their time at their current Department of Defense Paygrade.</CommonCoreOntologies:definition>
         <rdfs:label>Act of U.S. Military Service at Current Department of Defense Pay Grade</rdfs:label>
     </owl:Class>
     
@@ -7715,9 +7869,9 @@ All of the following are instances of a Act of Service at Pay Grade E-4:
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Navy_Service -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Navy_Service">
-        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMilitaryService"/>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Military_Service"/>
         <rdfs:label>Act of U.S. Navy Service</rdfs:label>
-        <rdfs:label>An Act of Military Service wherein some Person serves as a member of the U.S. Navy.</rdfs:label>
+        <rdfs:label>An Act of U.S. Military Service wherein some Person serves as a member of the U.S. Navy.</rdfs:label>
     </owl:Class>
     
 
@@ -7791,6 +7945,24 @@ All of the following are instances of a Act of Service at Pay Grade E-4:
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Army_Service_at_Pay_Grade_E-7"/>
         <CommonCoreOntologies:definition>An Act of U.S. Army Service at Pay Grade E-7 wherein some Person serves in the U.S. Regular Army at the U.S. Army Sergeant First Class Rank.</CommonCoreOntologies:definition>
         <rdfs:label>Act of U.S. Regular Army Service at Pay Grade E-7</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Space_Force_Commissioned_Officer_Promotion -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Space_Force_Commissioned_Officer_Promotion">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Space_Force_Promotion"/>
+        <rdfs:label>Act of U.S. Space Force Commissioned Officer Promotion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Space_Force_Promotion -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Space_Force_Promotion">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Military_Rank_Promotion"/>
+        <rdfs:label>Act of U.S. Space Force Promotion</rdfs:label>
     </owl:Class>
     
 
@@ -9471,10 +9643,50 @@ Senior NCO rank: the rest (so far)</obo:IAO_0000116>
     
 
 
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Air_Chief_Marshal_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Air_Chief_Marshal_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Air Force Air Chief Marshal Rank</rdfs:label>
+        <MilitaryRanksOntology1:rank_group>General Officer</MilitaryRanksOntology1:rank_group>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Air_Commodore_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Air_Commodore_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Air Force Air Commodore Rank</rdfs:label>
+        <MilitaryRanksOntology1:rank_group>General Officer</MilitaryRanksOntology1:rank_group>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Air_Marshal_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Air_Marshal_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Air Force Air Marshal Rank</rdfs:label>
+        <MilitaryRanksOntology1:rank_group>General Officer</MilitaryRanksOntology1:rank_group>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Air_Vice_Marshal_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Air_Vice_Marshal_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Air Force Air Vice Marshal Rank</rdfs:label>
+        <MilitaryRanksOntology1:rank_group>General Officer</MilitaryRanksOntology1:rank_group>
+    </owl:Class>
+    
+
+
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Aircraftman_1_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Aircraftman_1_Rank">
-        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Junior_Enlisted_Rank"/>
         <rdfs:label>Bangladesh Air Force Aircraftman 1 Rank</rdfs:label>
     </owl:Class>
     
@@ -9483,8 +9695,74 @@ Senior NCO rank: the rest (so far)</obo:IAO_0000116>
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Aircraftman_2_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Aircraftman_2_Rank">
-        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Junior_Enlisted_Rank"/>
         <rdfs:label>Bangladesh Air Force Aircraftman 2 Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:label>Bangladesh Air Force Commissioned Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Corporal_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Corporal_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Non-Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;A Cpl is a Non-Commissioned Officer (NCO) . An airman promoted to the rank of Corporal after completion of 07 years of service and having minimum 03 years service as Leading Aircraftman (LAC).&quot; 
+[https://web.archive.org/web/20200221000201/http://www.joinbangladeshairforce.mil.bd/index.php/main_controll/ranks_structure_baf?1=1&amp;pagemenu=ranks_structure_baf&amp;submenu=2]</rdfs:comment>
+        <rdfs:label>Bangladesh Air Force Corporal Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Flight_Lieutenant_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Flight_Lieutenant_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Air Force Flight Lieutenant Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Flying_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Flying_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Air Force Flying Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Group_Captain_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Group_Captain_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Air Force Group Captain Rank</rdfs:label>
+        <MilitaryRanksOntology1:rank_group>Field Officer</MilitaryRanksOntology1:rank_group>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Junior_Commissioned_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Junior_Commissioned_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:label>Bangladesh Air Force Junior Commissioned Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Junior_Enlisted_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Junior_Enlisted_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:label>Bangladesh Air Force Junior Enlisted Rank</rdfs:label>
     </owl:Class>
     
 
@@ -9492,8 +9770,311 @@ Senior NCO rank: the rest (so far)</obo:IAO_0000116>
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Leading_Aircraftman_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Leading_Aircraftman_Rank">
-        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Junior_Enlisted_Rank"/>
         <rdfs:label>Bangladesh Air Force Leading Aircraftman Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Master_Warrant_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Master_Warrant_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Junior_Commissioned_Officer_Rank"/>
+        <obo:IAO_0000118>মাস্টার ওয়ারেন্ট অফিসার</obo:IAO_0000118>
+        <rdfs:comment>&quot;They are the Junior Commissioned Officers (JCO) of Bangladesh Air Force. A Senior Warrant Officer promoted to the rank of Master Warrant Officer after completion of 25 years of service with minimum 02 years as substantive Senior Warrant Officer.&quot; [https://web.archive.org/web/20200221000201/http://www.joinbangladeshairforce.mil.bd/index.php/main_controll/ranks_structure_baf?1=1&amp;pagemenu=ranks_structure_baf&amp;submenu=2]</rdfs:comment>
+        <rdfs:label>Bangladesh Air Force Master Warrant Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Non-Commissioned_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Non-Commissioned_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:label>Bangladesh Air Force Non-Commissioned Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Pilot_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Pilot_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Air Force Pilot Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Senior_Warrant_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Senior_Warrant_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Junior_Commissioned_Officer_Rank"/>
+        <obo:IAO_0000118>সিনিয়র ওয়ারেন্ট অফিসার</obo:IAO_0000118>
+        <rdfs:comment>&quot;It is one of the Junior Commissioned Officer (JCO) of Bangladesh Air Force. A Warrant Officer is promoted to the rank of Senior Warrant Officer after completion of 22 years of service with minimum 02 years as substantive Warrant Officer.&quot; [https://web.archive.org/web/20200221000201/http://www.joinbangladeshairforce.mil.bd/index.php/main_controll/ranks_structure_baf?1=1&amp;pagemenu=ranks_structure_baf&amp;submenu=2]</rdfs:comment>
+        <rdfs:label>Bangladesh Air Force Senior Warrant Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Sergeant_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Sergeant_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Non-Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;A Sgt is a Non-Commissioned Officer (NCO). A corporal promoted to the rank of Sgt after completion of 12 years of service and having minimum 03 years as substantive corporal.&quot; [https://web.archive.org/web/20200221000201/http://www.joinbangladeshairforce.mil.bd/index.php/main_controll/ranks_structure_baf?1=1&amp;pagemenu=ranks_structure_baf&amp;submenu=2]</rdfs:comment>
+        <rdfs:label>Bangladesh Air Force Sergeant Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Squadron_Leader_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Squadron_Leader_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Air Force Squadron Leader Rank</rdfs:label>
+        <MilitaryRanksOntology1:rank_group>Field Officer</MilitaryRanksOntology1:rank_group>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Warrant_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Warrant_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Junior_Commissioned_Officer_Rank"/>
+        <obo:IAO_0000118>ওয়ারেন্ট অফিসার</obo:IAO_0000118>
+        <rdfs:comment>&quot;It is the first Junior Commissioned Officers (JCO) rank of Bangladesh Air Force. A Sergeant promoted to the rank of Warrant Officer after completion of 18 years of service with having minimum 03 years as substantive Sergeant.&quot; [https://web.archive.org/web/20200221000201/http://www.joinbangladeshairforce.mil.bd/index.php/main_controll/ranks_structure_baf?1=1&amp;pagemenu=ranks_structure_baf&amp;submenu=2]</rdfs:comment>
+        <rdfs:label>Bangladesh Air Force Warrant Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Wing_Commander_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Wing_Commander_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Air_Force_Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Air Force Wing Commander Rank</rdfs:label>
+        <MilitaryRanksOntology1:rank_group>Field Officer</MilitaryRanksOntology1:rank_group>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Brigadier_General_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Brigadier_General_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;A Brigadier General is appointed as a Brigade Commander . Some time he serves as a Director at various directorate of Army Headquarters. He acts as Commandant at most of the training institutions. Some Brigadier Generals are posted to BGB as Sector Commander also.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Brigadier General Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Captain_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Captain_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;A Captain serves as a company second in command or a staff officer in unit and formation level. He holds various appointments like, Grade-3 Staff Officer, Adjutant, Quarter Master etc. Various extra regimental duties starts from this rank. Some Captains hold the appointment of Aid de Corp to senior officers. Some officers are posted to BGB, SSF, RAB as captain also.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Captain Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Colonel_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Colonel_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;A Colonel is appointed as an Officiating Brigade Commander . Some time he serves as a Colonel Staff at formation level. Some Colonels are posted as a Station Commander. Some Colonels are posted to BGB as Sector Commander and DGFI as Colonel GS.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Colonel Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:label>Bangladesh Army Commissioned Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Corporal_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Corporal_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Non-Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Army Corporal Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_General_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_General_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;A four star General is the highest rank in the Bangladesh Army. Chief of Army Staff in Bangladesh Army is a four star General.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army General Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Junior_Commissioned_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Junior_Commissioned_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:label>Bangladesh Army Junior Commissioned Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Junior_Enlisted_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Junior_Enlisted_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:label>Bangladesh Army Junior Enlisted Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Lance_Corporal_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Lance_Corporal_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Junior_Enlisted_Rank"/>
+        <rdfs:label>Bangladesh Army Lance Corporal Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Lieutenant_Colonel_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Lieutenant_Colonel_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;He is the Battalion Commander. Some time he serves as a Grade-1 staff officer at formation level. He holds various appointments like Grade-1 Staff Officer, AA &amp; QMG etc. He acts as Chief Instructor at most of the training institutions. Some officers are posted to BGB, RAB, POLICE, DGFI, SSF, NSI, BTRC as Lieutenant Colonel also.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Lieutenant Colonel Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Lieutenant_General_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Lieutenant_General_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;A Lieutenant General is a three star General. Some time he serves as PSO to the Chief of Army Staff or a PSO at Armed Forces Division or Director General at DGFI. He may act as a Commandant at National Defence College too.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Lieutenant General Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Lieutenant_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Lieutenant_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;A Lieutenant assists Company Commander in various unit activities. He serves as the administrative officer or staff officer in an unit.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Lieutenant Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Major_General_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Major_General_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;A Major General is appointed as a General Officer Commanding at Division Level or ARTDOC. Some time he serves as PSO to the Chief of Army Staff. He serves as a PSO at Armed Forces Division, Director General at DGFI, SSF, BGB, Ansar &amp; VDP and some other organizations. He acts as Commandant at National Defence College, Defence Service Command and Staff College, Military Institute of Science and Technology and VC of Bangladesh University of Professionals etc.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Major General Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Major_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Major_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;A Major serves as a Company Commander in a unit/ battalion. Some very senior Majors are appointed as Battalion Second in Command. Some are appointed as Officer Commanding of independent companies . He serves as a Grade-2 staff officer at HQ and formation level. He holds various appointments like Grade-2 Staff Officer, Brigade Major, DAA &amp; QMG etc. He acts as Instructor at most of the training institutions. Some officers are posted to BGB, SSF, RAB, POLICE, DGFI, BNCC, NSI, BTRC as major also.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Major Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Master_Warrant_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Master_Warrant_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Junior_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;There&apos;s only one Master Warrant Officer in a Battalion. Serves as the senior advisor and consultant to the Commanding Officer.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Master Warrant Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Non-Commissioned_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Non-Commissioned_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:label>Bangladesh Army Non-Commissioned Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Sainik_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Sainik_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Junior_Enlisted_Rank"/>
+        <obo:IAO_0000118>Bangladesh Army Private Rank</obo:IAO_0000118>
+        <rdfs:label>Bangladesh Army Sainik Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Second_Lieutenant_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Second_Lieutenant_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;A Second Lieutenant is the junior most officer in a Battalion. He serves as the administrative officer or staff officer in an unit.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Second Lieutenant Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Senior_Warrant_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Senior_Warrant_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Junior_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;Key appointment and the platoon leader. Generally has 22 to 25 years of Army experience and puts it to use by making quick, accurate decisions in the best interests of the Soldiers.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Senior Warrant Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Sergeant_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Sergeant_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Non-Commissioned_Officer_Rank"/>
+        <rdfs:label>Bangladesh Army Sergeant Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Warrant_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Warrant_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Bangladesh_Army_Junior_Commissioned_Officer_Rank"/>
+        <rdfs:comment>&quot;Key appointment and the platoon leader. Generally has 15 to 20 years of Army experience and puts it to use by making quick, accurate decisions in the best interests of the Soldiers and the country.&quot; [https://joinbangladesharmy.army.mil.bd/home/page/ranks-insignia]</rdfs:comment>
+        <rdfs:label>Bangladesh Army Warrant Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Basic_Active_Service_Date -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Basic_Active_Service_Date">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Date_of_Initital_Entry_into_Military_Service"/>
+        <rdfs:label>Basic Active Service Date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Basic_Active_Service_Date_Identifier -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Basic_Active_Service_Date_Identifier">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Date_of_Initial_Entry_Into_Military_Service_Identifier"/>
+        <CommonCoreOntologies:definition>A Date of Initial Entry Into Military Service Identifier that designates the Day on which some Person officially began their military service in the U.S. Army.</CommonCoreOntologies:definition>
+        <rdfs:label>Basic Active Service Date Identifier</rdfs:label>
     </owl:Class>
     
 
@@ -11263,7 +11844,7 @@ Not sure</MilitaryRanksOntology1:rank_group>
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/British_Royal_Air_Force_Lance_Corporal_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/British_Royal_Air_Force_Lance_Corporal_Rank">
-        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/British_Army_Non-Commissioned_Officer_Rank"/>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/British_Royal_Air_Force_Non-Commissioned_Officer_Rank"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/has_NATO_Rank_Scale_Code"/>
@@ -14121,6 +14702,25 @@ A commissioned officer role is not equivalent to &apos;command[1]&apos;, because
     
 
 
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Date_of_Initial_Entry_Into_Military_Service_Identifier -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Date_of_Initial_Entry_Into_Military_Service_Identifier">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/CalendarDateIdentifier"/>
+        <CommonCoreOntologies:definition>A Calendar Date Identifier that designates the Day on which some Person officially entered into service in some branch of the U.S. Armed Forces.</CommonCoreOntologies:definition>
+        <rdfs:label>Date of Initial Entry Into Military Service Identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Date_of_Initital_Entry_into_Military_Service -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Date_of_Initital_Entry_into_Military_Service">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/CalendarDay"/>
+        <rdfs:label>Date of Initital Entry into Military Service</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Date_of_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Date_of_Rank">
@@ -14149,7 +14749,7 @@ https://www.armyresilience.army.mil/ard/images/pdf/Policy/600-20%20Army%20Comman
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Date_of_Rank_Identifier">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/CalendarDateIdentifier"/>
-        <CommonCoreOntologies:definition>A Calendar Date Identifier that designates some Date of Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>A Calendar Date Identifier that designates the Calendar Day on which a member of an Armed Force was actually, or constructively, appointed or promoted to a particular Military Rank.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:example_of_usage>The identifier of a Soldier&apos;s date of rank as it appears on a promotion order, or on a promotion recommended list.</CommonCoreOntologies:example_of_usage>
         <rdfs:label>Date of Rank Identifier</rdfs:label>
     </owl:Class>
@@ -14312,9 +14912,8 @@ https://en.wikipedia.org/wiki/Enlisted_Professional_Military_Education</obo:IAO_
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Enlisted_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Military_Rank"/>
         <obo:IAO_0000116>&quot;Enlisted personnel are personnel below commissioned rank and make up the vast majority of military personnel. They are known by different names in different countries, such as other ranks (ORs) in the United Kingdom and some Commonwealth countries, and non-commissioned members (NCMs) in Canada.&quot; [https://en.wikipedia.org/wiki/Military_rank#Enlisted_personnel]</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>A Military Rank that is either appointed upon enlistment into an Armed Force, or is appointed via a subsequent promotion following enlistment.
-
-[Note: is this strong enough? Would this definition exclude the case where someone enlists at Private, works their way up the ranks, and later is transferred to cadet school (upon showing officer potential while in the enlisted ranks) and is then promoted to a commissioned officer rank after being commissioned by the president.]</CommonCoreOntologies:definition>
+        <obo:IAO_0000116>[Note: is this strong enough? Would this definition exclude the case where someone enlists at Private, works their way up the ranks, and later is transferred to cadet school (upon showing officer potential while in the enlisted ranks) and is then promoted to a commissioned officer rank after being commissioned by the president.]</obo:IAO_0000116>
+        <CommonCoreOntologies:definition>A Military Rank that specifies a position in the order of precedence among enlisted members of an Armed Force and is bestowed on a Service Member either when enlisting into an Armed Force or via a subsequent promotion.</CommonCoreOntologies:definition>
         <rdfs:comment>In most Armed Forces, any rank below that of Commissioned Officer Rank; in the U.S. Armed Forces, any rank below that of warrant officer.</rdfs:comment>
         <rdfs:label>Enlisted Rank</rdfs:label>
     </owl:Class>
@@ -16765,7 +17364,7 @@ https://www.govinfo.gov/content/pkg/STATUTE-100/pdf/STATUTE-100-Pg992.pdf
 
 [Though, there are some conditions listed under which the Secretary of Defense can waive this requirement.]</CommonCoreOntologies:definition_source>
         <CommonCoreOntologies:definition_source>https://officerassignments.com/general-flag-officer-promotions/</CommonCoreOntologies:definition_source>
-        <rdfs:label>Joint Duty Assignment Requirement for Promotion to General-Officer Rank or Flag Officer Rank</rdfs:label>
+        <rdfs:label>Joint Duty Assignment Requirement for Promotion to General Officer Rank or Flag Officer Rank</rdfs:label>
     </owl:Class>
     
 
@@ -16924,7 +17523,7 @@ https://www.govinfo.gov/content/pkg/STATUTE-100/pdf/STATUTE-100-Pg992.pdf
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Junior_Enlisted_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Enlisted_Rank"/>
-        <CommonCoreOntologies:definition>An Enlisted Rank within some Armed Force that is junior to the Non-Commissioned Officer Ranks of that Armed Force, and specifies a position that includes certain duties and responsibilities but lacks an Authority Role.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>An Enlisted Rank below the Non-Commissioned Officer Ranks which specifies a position in the order of precedence that includes certain duties and responsibilities but lacks an Authority Role.</CommonCoreOntologies:definition>
         <rdfs:comment>These are ranks for which there is no command authority. 
 
 We want to say that this rank is not associated with command authority. But we don&apos;t necessarily want to imply that there are no instances of persons falling under this rank bearing an authority role. Might someone of this rank have to take up the authority role of their direct superior if the latter is killed in battle?</rdfs:comment>
@@ -19755,7 +20354,7 @@ Table 1.1.https://static.e-publishing.af.mil/production/1/af_a1/publication/afi3
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Non-Commissioned_Officer_rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Enlisted_Rank"/>
-        <CommonCoreOntologies:definition>An Enlisted Personnel Rank specifying an Authority Role obtained via promotion through the enlisted ranks.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>An Enlisted Rank which specifies an Authority Role that is realized in the supervision of lower ranked enlisted Service Members, and which is acquired via promotion through the enlisted ranks.</CommonCoreOntologies:definition>
         <rdfs:label>Non-Commissioned Officer Rank</rdfs:label>
     </owl:Class>
     
@@ -22975,6 +23574,15 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN17424_R600_8_19_Admin_FI
     
 
 
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Regular_Army_Automatic_Promotion_to_U.S._Army_Specialist_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Regular_Army_Automatic_Promotion_to_U.S._Army_Specialist_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Automatic_Promotion_to_U.S._Army_Specialist_Rank"/>
+        <rdfs:label>Regular Army Automatic Promotion to U.S. Army Specialist Rank</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Regular_Army_Centralized_Promotion_to_U.S._Army_First_Sergeant_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Regular_Army_Centralized_Promotion_to_U.S._Army_First_Sergeant_Rank">
@@ -23052,7 +23660,13 @@ That passage is specifically about Army Guard Reserve, have to inquire further t
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Requirement_for_Promotion_in_Military_Rank">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActionRequirement"/>
-        <CommonCoreOntologies:definition>An Action Regulation that requires an Agent, who holds a Military Rank within some Armed Force, to complete some Act as a condition of eligibility for promotion to the next higher Military Rank.</CommonCoreOntologies:definition>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_a_requirement_condition_for"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Military_Rank_Promotion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:definition>An Action Requirement that requires an Agent, who holds a Military Rank within some Armed Force, to complete some Act in order to be eligible for promotion to the next higher Military Rank.</CommonCoreOntologies:definition>
         <rdfs:comment>I am assuming that action requirement could be future or past tense. Meaning that it might be a requirement that an agent is to complete an action in the future, or that an agent is to have completed an action in the past. But need to double check with the CCO people.</rdfs:comment>
         <rdfs:comment>I am only putting this as a direct subclass of Action Requirement for now. There may be intermediary superclasses which I have not thought of.
 
@@ -24120,6 +24734,64 @@ https://en.wikipedia.org/wiki/Chief_petty_officer,_1st_class</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
         <obo:IAO_0000116>below corporal</obo:IAO_0000116>
         <rdfs:label>Royal New Zealand Air Force Leading Aircraftman Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Army_general_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Army_general_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Commissioned_Officer_Rank"/>
+        <obo:IAO_0000118>Generál ármii</obo:IAO_0000118>
+        <obo:IAO_0000118>Генера́л а́рмии</obo:IAO_0000118>
+        <rdfs:label>Russian Ground Forces Army general Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Colonel_general_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Colonel_general_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Commissioned_Officer_Rank"/>
+        <obo:IAO_0000116>3rd highest general officer rank (below Army general and Marshal of the Russian Federation).
+
+Interestingly, historically it derives from German &quot;Generaloberst&quot;, which was equivalent to a 4-star general rank. But the Russian &apos;Colonel general&apos; is the equivalent of a 3-star U.S. Army General.</obo:IAO_0000116>
+        <obo:IAO_0000118>Generál-polkóvnik</obo:IAO_0000118>
+        <obo:IAO_0000118>Генера́л-полко́вник</obo:IAO_0000118>
+        <rdfs:comment>&quot;The rank has usually been given to district, front and army commanders, and also to deputy ministers of defense, deputy heads of the general staff and so on.&quot; https://en.wikipedia.org/wiki/Colonel_general#Russia</rdfs:comment>
+        <rdfs:label>Russian Ground Forces Colonel general Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Commissioned_Officer_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Commissioned_Officer_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
+        <rdfs:label>Russian Ground Forces Commissioned Officer Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Lieutenant_General_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Lieutenant_General_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Commissioned_Officer_Rank"/>
+        <obo:IAO_0000116>This is equivalent to a 2-star general in the U.S. Army, whereas the U.S. Army Lieutenant General Rank is a 3-star rank.</obo:IAO_0000116>
+        <obo:IAO_0000118>Generál-leytenánt</obo:IAO_0000118>
+        <obo:IAO_0000118>Генера́л-лейтена́нт</obo:IAO_0000118>
+        <rdfs:label>Russian Ground Forces Lieutenant General Rank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Major_general_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Major_general_Rank">
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Russian_Ground_Forces_Commissioned_Officer_Rank"/>
+        <obo:IAO_0000118>Generál-mayór</obo:IAO_0000118>
+        <obo:IAO_0000118>Генера́л-майо́р</obo:IAO_0000118>
+        <rdfs:label>Russian Ground Forces Major general Rank</rdfs:label>
     </owl:Class>
     
 
@@ -25582,6 +26254,16 @@ See in particular paragraphs:
     
 
 
+    <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Stasis_of_Military_Rank -->
+
+    <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Stasis_of_Military_Rank">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/StasisOfGenericallyDependentContinuant"/>
+        <CommonCoreOntologies:definition>A Stasis of Generically Dependent Continuant in which some Person carries some Military Rank which remains unchanged during a Temporal Interval.</CommonCoreOntologies:definition>
+        <rdfs:label>Stasis of Military Rank</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Sub_Lieutenant_Rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Sub_Lieutenant_Rank">
@@ -25672,7 +26354,7 @@ See in particular paragraphs:
         <obo:IAO_0000116>I need to check if there is an already established general term used by the various branches of the U.S. Armed Forces to refer to this sort of training (as with the general term &apos;Enlisted Professional Military Education Requirement&apos; used by the different branches).
 
 Cf: https://en.wikipedia.org/wiki/Enlisted_Professional_Military_Education</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>A Requirement for Promotion in Military Rank that requires some enlisted member of the U.S. Armed Forces to complete some military technical training, as a condition for promotion to some Military Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>A Requirement for Promotion in Military Rank that requires an enlisted member of the U.S. Armed Forces to complete some military technical training, in order to be eligible for promotion to the next higher Military Rank.</CommonCoreOntologies:definition>
         <rdfs:label>Technical Training Requirement for Promotion in Military Rank</rdfs:label>
     </owl:Class>
     
@@ -25813,6 +26495,20 @@ Cf: https://en.wikipedia.org/wiki/Enlisted_Professional_Military_Education</obo:
                                 <owl:intersectionOf rdf:parseType="Collection">
                                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000038"/>
                                     <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_started_by"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Day"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/designated_by"/>
+                                                        <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Date_of_Rank_Identifier"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
                                         <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_temporal_region_of"/>
                                         <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_U.S._Military_Service_at_Current_Department_of_Defense_Pay_Grade"/>
                                     </owl:Restriction>
@@ -25823,7 +26519,23 @@ Cf: https://en.wikipedia.org/wiki/Enlisted_Professional_Military_Education</obo:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <CommonCoreOntologies:definition>A Measurement Information Content Entity that is a measurement of the time some Agent has served in the U.S. military at their current U.S. Department of Defense Pay Grade.</CommonCoreOntologies:definition>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0010001"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/uses_measurement_unit"/>
+                                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MeasurementUnitOfTime"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <CommonCoreOntologies:definition>A Measurement Information Content Entity that is a measurement of the time some Person has served in some U.S. military branch at their current U.S. Department of Defense Pay Grade.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Time in Grade Measurement Information Content Entity</rdfs:label>
     </owl:Class>
@@ -25915,6 +26627,12 @@ https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2501/afi
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Time_in_Grade_Requirement_for_Promotion_in_Military_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Requirement_for_Promotion_in_Military_Rank"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_a_requirement_condition_for"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Military_Rank_Promotion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <CommonCoreOntologies:definition>A Requirement for Promotion in Military Rank that requires some member of some U.S. Armed Force to complete some temporal interval of work within their current U.S. Department of Defense Pay Grade.</CommonCoreOntologies:definition>
         <rdfs:label>Time in Grade Requirement for Promotion in Military Rank</rdfs:label>
     </owl:Class>
@@ -26907,6 +27625,12 @@ https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granulei
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Time_in_Rate_Requirement_for_Promotion_in_Military_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Requirement_for_Promotion_in_Military_Rank"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_a_requirement_condition_for"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Military_Rank_Promotion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <CommonCoreOntologies:definition>An Action Requirement for Promotion in Military Rank that requires an elisted sailor of an Armed Force employing the enlisted rate system, to complete some minimum temporal interval of work within their current rate, as a condition for promotion to some Military Rank.</CommonCoreOntologies:definition>
         <rdfs:label>Time in Rate Requirement for Promotion in Military Rank</rdfs:label>
     </owl:Class>
@@ -27031,6 +27755,20 @@ https://www.mynavyhr.navy.mil/Portals/55/Reference/Instructions/BUPERS/BUPERSINS
                                 <owl:intersectionOf rdf:parseType="Collection">
                                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000038"/>
                                     <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_started_by"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Day"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/designated_by"/>
+                                                        <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Date_of_Initial_Entry_Into_Military_Service_Identifier"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
                                         <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_temporal_region_of"/>
                                         <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMilitaryService"/>
                                     </owl:Restriction>
@@ -27058,7 +27796,7 @@ https://www.mynavyhr.navy.mil/Portals/55/Reference/Instructions/BUPERS/BUPERSINS
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000116>Needs to be refined with reference to initial enlistment date (for enlisted ranks) or date commissioned (for commissioned officers).</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>A Measurement Information Content Entity that is a measurement of the temporal region on which some Act of Military Service occurs.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>A Measurement Information Content Entity that is a measurement of the time a Person has served in some U.S. military branch since the date on which that Person officially began their service.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:term_editor>Shane Babcock</CommonCoreOntologies:term_editor>
         <rdfs:label>Time in Service Measurement Information Content Entity</rdfs:label>
     </owl:Class>
@@ -27119,7 +27857,7 @@ Paragraph 2.1.2. https://static.e-publishing.af.mil/production/1/af_a1/publicati
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Time_in_Service_Requirement_for_Promotion_in_U.S._Air_Force_Rank_(REGAF)"/>
         <CommonCoreOntologies:definition>A Time in Service Requirement for Promotion in U.S. Air Force Rank that requires a U.S. Air Force Airman Basic to have completed a minimum of 6 months time in service in order to be eligible for promotion to the U.S. Air Force Airman Rank.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>https://www.military.com/air-force/enlisted-ranks.html</CommonCoreOntologies:definition_source>
-        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Airman Rank</rdfs:label>
+        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Airman Rank (REGAF)</rdfs:label>
     </owl:Class>
     
 
@@ -27132,7 +27870,7 @@ Paragraph 2.1.2. https://static.e-publishing.af.mil/production/1/af_a1/publicati
         <CommonCoreOntologies:definition_source>AIR FORCE INSTRUCTION 36-2502, Table 2.1.
 
 https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi36-2502.pdf</CommonCoreOntologies:definition_source>
-        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Chief Master Sergeant Rank</rdfs:label>
+        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Chief Master Sergeant Rank (REGAF)</rdfs:label>
     </owl:Class>
     
 
@@ -27145,7 +27883,7 @@ https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi
         <CommonCoreOntologies:definition_source>AIR FORCE INSTRUCTION 36-2502, Table 2.1.
 
 https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi36-2502.pdf</CommonCoreOntologies:definition_source>
-        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Master Sergeant Rank</rdfs:label>
+        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Master Sergeant Rank (REGAF)</rdfs:label>
     </owl:Class>
     
 
@@ -27158,7 +27896,7 @@ https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi
         <CommonCoreOntologies:definition_source>AIR FORCE INSTRUCTION 36-2502, Table 2.1.
 
 https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi36-2502.pdf</CommonCoreOntologies:definition_source>
-        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Senior Airman Rank</rdfs:label>
+        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Senior Airman Rank (REGAF)</rdfs:label>
     </owl:Class>
     
 
@@ -27171,7 +27909,7 @@ https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi
         <CommonCoreOntologies:definition_source>AIR FORCE INSTRUCTION 36-2502, Table 2.1.
 
 https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi36-2502.pdf</CommonCoreOntologies:definition_source>
-        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Senior Master Sergeant Rank</rdfs:label>
+        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Senior Master Sergeant Rank (REGAF)</rdfs:label>
     </owl:Class>
     
 
@@ -27184,7 +27922,7 @@ https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi
         <CommonCoreOntologies:definition_source>AIR FORCE INSTRUCTION 36-2502, Table 2.1.
 
 https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi36-2502.pdf</CommonCoreOntologies:definition_source>
-        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Staff Sergeant Rank</rdfs:label>
+        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Staff Sergeant Rank (REGAF)</rdfs:label>
     </owl:Class>
     
 
@@ -27197,7 +27935,7 @@ https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi
         <CommonCoreOntologies:definition_source>AIR FORCE INSTRUCTION 36-2502, Table 2.1.
 
 https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2502/afi36-2502.pdf</CommonCoreOntologies:definition_source>
-        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Technical Sergeant Rank</rdfs:label>
+        <rdfs:label>Time in Service Requirement for Promotion to U.S. Air Force Technical Sergeant Rank (REGAF)</rdfs:label>
     </owl:Class>
     
 
@@ -34376,7 +35114,7 @@ Active Guard Reserve promotions, just like Regular Army promotions, use promotio
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Reserve_Promotion_to_U.S._Army_Master_Sergeant_Rank">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Master_Sergeant_Rank"/>
         <CommonCoreOntologies:definition>An Act of Promotion to U.S. Army Master Sergeant Rank wherein some U.S. Army Reserve Sergeant First Class is advanced to the U.S. Army Master Sergeant Rank by some promotion authority.</CommonCoreOntologies:definition>
-        <rdfs:label>U.S. Army Reserve Promotion to U.S. Army Master Sergeant Rank</rdfs:label>
+        <rdfs:label>Act of Promotion to U.S. Army Master Sergeant Rank (USAR)</rdfs:label>
     </owl:Class>
     
 
@@ -34714,7 +35452,7 @@ But U.S. Army Sergeant First Class is also one rank directly below the U.S. Army
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Sergeant_First_Class_role">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Non-Commissioned_Officer_Role"/>
         <obo:IAO_0000114>requires review</obo:IAO_0000114>
-        <CommonCoreOntologies:definition>A U.S. Army Non-Commissioned Officer Role that inheres in an Agent in virtue of that Agent holding the U.S. Army Sergeant First Class Rank, and which the Agent typically realizes by serving as a Platoon Sergeant, assisting and advising the platoon leader, while also training and caring for the unit&apos;s subordinate Soldiers.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>A U.S. Army Non-Commissioned Officer Role that inheres in an Agent in virtue of that Agent holding the U.S. Army Sergeant First Class Rank, and which the Agent typically realizes by serving as a Platoon Sergeant, assisting, and advising the platoon leader, while also training and caring for the unit&apos;s subordinate Soldiers.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>https://www.army.mil/ranks/</CommonCoreOntologies:definition_source>
         <rdfs:label>U.S. Army Sergeant First Class Role</rdfs:label>
     </owl:Class>
@@ -34984,7 +35722,7 @@ However, given the number of sergeants serving the in the Army and the rate at w
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Sergeant_role">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Non-Commissioned_Officer_Role"/>
-        <CommonCoreOntologies:definition>A U.S. Army Commissioned Officer Role that inheres in an Agent in virtue of that Agent holding the U.S. Army Sergeant Rank, and which the Agent realizes by leading a team of Junior Enlisted Soldiers, overseeing them in their daily tasks, while insuring they are each trained to competency in their Military Occupational Specialty and the unit is trained to function in its primary mission roles.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>A U.S. Army Commissioned Officer Role that inheres in an Agent in virtue of that Agent holding the U.S. Army Sergeant Rank, and which the Agent typically realizes by leading a team of Junior Enlisted Soldiers, overseeing them in their daily tasks, while insuring they are each trained to competency in their Military Occupational Specialty and the unit is trained to function in its primary mission roles.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>https://www.army.mil/ranks/</CommonCoreOntologies:definition_source>
         <CommonCoreOntologies:elucidation>Like the U.S. Army Corporal, the Sergeant is responsible for overseeing the individual training, personal appearance, and cleanliness of the Junior Soldiers under their leadership.
 
@@ -35249,11 +35987,13 @@ This may change in the future given new Army policy on promotions to the Sergean
                 <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Space_Force_Master_Sergeant_rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000116>A U.S. Army Staff Sergeant often has one or more U.S. Army Sergeants that work under their direct leadership.</obo:IAO_0000116>
         <obo:IAO_0000116>Junior NCO</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>A U.S. Army Non-Commissioned Officer Rank that is directly above the U.S. Army Sergeant Rank and directly below the U.S. Army Sergeant First Class Rank, signifying that holders of the rank typically serve as commanders of squads of 9-10 soldiers, but may also serve as Platoon Sergeants in the absence of a U.S. Army Sergeant First Class.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>A U.S. Army Non-Commissioned Officer Rank that is directly above the U.S. Army Sergeant Rank and directly below the U.S. Army Sergeant First Class Rank, and which signifies that the rank holder bears an Authority Role that primarily involves leadership of a squad of 8-16 Soldiers.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>https://en.wikipedia.org/wiki/Staff_sergeant#U.S._Army</CommonCoreOntologies:definition_source>
         <CommonCoreOntologies:definition_source>https://www.federalpay.org/military/army/staff-sergeant</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:elucidation>A U.S. Army Staff Sergeant often has one or more U.S. Army Sergeants that work under their direct leadership.
+
+A U.S. Army Staff Sergeant may also serve as a Platoon Sergeant in the absence of a U.S. Army Sergeant First Class.</CommonCoreOntologies:elucidation>
         <rdfs:label>U.S. Army Staff Sergeant Rank</rdfs:label>
     </owl:Class>
     
@@ -35263,7 +36003,7 @@ This may change in the future given new Army policy on promotions to the Sergean
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Staff_Sergeant_role">
         <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/U.S._Army_Non-Commissioned_Officer_Role"/>
-        <CommonCoreOntologies:definition>A U.S. Army Non-Commissioned Officer Role that inheres in an Agent in virtue of that Agent holding the U.S. Army Staff Sergeant Rank, and which the Agent realizes by leading a squad of 8 to 16 Soldiers, developing and training those Soldiers in Military Occupational Specialty skills and unit missions, while enforcing standards.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>A U.S. Army Non-Commissioned Officer Role that inheres in an Agent in virtue of that Agent holding the U.S. Army Staff Sergeant Rank, and which the Agent typically realizes by leading a squad of 8 to 16 Soldiers, developing and training those Soldiers in Military Occupational Specialty skills and unit missions, while enforcing standards.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>https://www.army.mil/ranks/</CommonCoreOntologies:definition_source>
         <CommonCoreOntologies:elucidation>A U.S. Army Staff Sergeant often has one or more U.S. Army Sergeants under their leadership, the latter leading the individual teams which compose squad. The Staff Sergeant is in charge of training and developing not only the Junior Enlisted Soldiers in their squad, but the subordinate Sergeants as well.</CommonCoreOntologies:elucidation>
         <rdfs:label>U.S. Army Staff Sergeant Role</rdfs:label>
@@ -50558,7 +51298,7 @@ https://uscode.house.gov/view.xhtml?hl=false&amp;edition=prelim&amp;req=granulei
     <!-- http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/student_officer_rank -->
 
     <owl:Class rdf:about="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/student_officer_rank">
-        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Military_Rank"/>
+        <rdfs:subClassOf rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Other"/>
         <obo:IAO_0000118>subordinate officer rank</obo:IAO_0000118>
         <rdfs:label>Student Officer Rank</rdfs:label>
     </owl:Class>
@@ -54236,7 +54976,7 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN17424_R600_8_19_Admin_FI
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_a_requirement_condition_for"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Specialist_Rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Regular_Army_Automatic_Promotion_to_U.S._Army_Specialist_Rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <CommonCoreOntologies:definition>A Time in Grade Requirement for Promotion in U.S. Army Rank (RA) that requires a Regular U.S. Army Private First Class to have served a minimum of 6 months in their current rank at the E-3 pay grade, in order to be automatically promoted to the U.S. Army Specialist Rank.</CommonCoreOntologies:definition>
@@ -54744,7 +55484,7 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN17424_R600_8_19_Admin_FI
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000116>Promotion to the PFC rank can be waived at 6 months TIS and 2 months TIG for consistent strong performance.</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>A Time in Service Requirement for Promotion in U.S. Army Rank (RA) that requires a Regular U.S. Army Private Second Class to have served a minimum of 12 months time in service, in order to be automatically promoted to the U.S. Army Private First Class Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>A Time in Service Requirement for Promotion in U.S. Army Rank (RA) that requires a U.S. Army Private Second Class serving in the Regular Army to have served a minimum of 12 months time in service, in order to be automatically promoted to the U.S. Army Private First Class Rank.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>Paragraph 2-3c(2): https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN17424_R600_8_19_Admin_FINAL.pdf</CommonCoreOntologies:definition_source>
         <rdfs:label>Time in Service Requirement for Promotion to U.S. Army Private First Class Rank (RA)</rdfs:label>
     </owl:Class>
@@ -55075,6 +55815,20 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN17424_R600_8_19_Admin_FI
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="http://wwww.ontologyrepository.com/CommonCoreOntologies/MultiMonthTemporalInterval"/>
                                             <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/interval_started_by"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Day"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/designated_by"/>
+                                                                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Basic_Active_Service_Date_Identifier"/>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
                                                 <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_measured_by"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
@@ -55115,7 +55869,7 @@ https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN17424_R600_8_19_Admin_FI
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/is_a_requirement_condition_for"/>
-                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Act_of_Promotion_to_U.S._Army_Specialist_Rank"/>
+                <owl:someValuesFrom rdf:resource="http://wwww.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology/Regular_Army_Automatic_Promotion_to_U.S._Army_Specialist_Rank"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000116>&quot;Soldiers holding or training for PMOS in career management field (CMF) 18 or ranger school graduates with at
@@ -55124,7 +55878,7 @@ in accordance with paragraph 1–11.&quot; [https://armypubs.army.mil/epubs/DR_p
 
 Soldiers entering the military with a 4 year college degree, or who have certain specialized civilian skills or training, can be automatically enlisted at the beginning rank of SPC.</obo:IAO_0000116>
         <obo:IAO_0000116>Promotion to the SPC rank can be waived at 18 months TIS and 3 months TIG (meaning that at 18 months TIS and 3 months in the PFC grade, the normal 24 month TIS and 6 months TIG requirements can be waived for consistent strong performance).</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>A Time in Service Requirement for Promotion in U.S. Army Rank (RA) that requires a Regular U.S. Army Private First Class to have served a minimum of 24 months time in service, in order to be automatically promoted to the U.S. Army Specialist Rank.</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>A Time in Service Requirement for Promotion in U.S. Army Rank (RA) that requires a U.S. Army Private First Class serving in the Regular Army to have served a minimum of 24 months time in service, in order to be automatically promoted to the U.S. Army Specialist Rank.</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>Paragraph 2-3c(4): https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN17424_R600_8_19_Admin_FINAL.pdf</CommonCoreOntologies:definition_source>
         <rdfs:label>Time in Service Requirement for Promotion to U.S. Army Specialist Rank (RA)</rdfs:label>
     </owl:Class>
