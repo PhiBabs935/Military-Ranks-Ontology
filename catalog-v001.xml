@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged" uri="CommonCoreOntologiesMerged.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1755358275197" name="http://www.ontologylibrary.mil/CommonCore/Mid/MilitaryRanksOntology" uri="MilitaryRanksOntology.owl"/>
+    </group>
+</catalog>
